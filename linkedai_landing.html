@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedAI — AI Automation for Small Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #0A1628;
+  --teal: #00B4D8;
+  --white: #FFFFFF;
+  --gray: #6B7E94;
+  --light: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.08);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 3rem;
+  background: rgba(10,22,40,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 1.3rem;
+  color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--teal); }
+.nav-cta {
+  background: transparent;
+  border: 1px solid rgba(0,180,216,0.4);
+  color: var(--teal);
+  padding: 0.55rem 1.3rem; border-radius: 6px;
+  font-size: 0.85rem; font-weight: 500; text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-cta:hover { background: rgba(0,180,216,0.1); border-color: var(--teal); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem 4rem;
+  position: relative; overflow: hidden;
+}
+
+.glow {
+  position: absolute; pointer-events: none;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -60%);
+  border-radius: 50%;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 2rem;
+  opacity: 0; animation: up 0.7s 0.1s forwards;
+}
+.dot { width: 5px; height: 5px; background: var(--teal); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 800; line-height: 1.04;
+  letter-spacing: -0.03em; max-width: 800px;
+  opacity: 0; animation: up 0.7s 0.2s forwards;
+}
+h1 em { color: var(--teal); font-style: normal; }
+
+.hero-desc {
+  margin-top: 1.6rem;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255,255,255,0.45);
+  max-width: 520px; font-weight: 300; line-height: 1.75;
+  opacity: 0; animation: up 0.7s 0.3s forwards;
+}
+
+.hero-actions {
+  display: flex; gap: 1rem; margin-top: 2.8rem; flex-wrap: wrap; justify-content: center;
+  opacity: 0; animation: up 0.7s 0.4s forwards;
+}
+.btn-p {
+  background: var(--teal); color: var(--navy);
+  padding: 0.85rem 2rem; border-radius: 8px;
+  font-weight: 600; font-size: 0.9rem; text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-p:hover { opacity: 0.85; transform: translateY(-2px); }
+.btn-s {
+  border: 1px solid var(--border); color: rgba(255,255,255,0.7);
+  padding: 0.85rem 2rem; border-radius: 8px;
+  font-size: 0.9rem; text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-s:hover { border-color: rgba(255,255,255,0.25); color: var(--white); }
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── DIVIDER ── */
+.divider {
+  border: none; border-top: 1px solid var(--border);
+  margin: 0 3rem;
+}
+
+/* ── WHAT WE DO ── */
+.what {
+  padding: 6rem 3rem; max-width: 1100px; margin: 0 auto;
+}
+.what-header { margin-bottom: 4rem; }
+.label {
+  font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 1rem; display: block;
+}
+.what-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 1.15;
+}
+.what-header p {
+  color: rgba(255,255,255,0.45); font-size: 1rem;
+  max-width: 480px; margin-top: 0.8rem; font-weight: 300; line-height: 1.7;
+}
+
+.cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--border); border-radius: 16px; overflow: hidden;
+}
+.card {
+  background: var(--navy); padding: 2rem 1.8rem;
+  transition: background 0.3s;
+}
+.card:hover { background: rgba(0,180,216,0.04); }
+.card-num {
+  font-family: 'Syne', sans-serif; font-size: 0.7rem;
+  color: var(--teal); letter-spacing: 0.1em; margin-bottom: 1.2rem;
+}
+.card h3 {
+  font-family: 'Syne', sans-serif; font-size: 1.05rem;
+  font-weight: 600; margin-bottom: 0.7rem; line-height: 1.3;
+}
+.card p { font-size: 0.87rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+
+/* ── FOR WHO ── */
+.for-who {
+  padding: 4rem 3rem 6rem; max-width: 1100px; margin: 0 auto;
+}
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.split-card {
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 2.5rem; transition: border-color 0.3s;
+}
+.split-card:hover { border-color: rgba(0,180,216,0.25); }
+.split-card .tag {
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); background: rgba(0,180,216,0.1);
+  padding: 0.3rem 0.8rem; border-radius: 100px;
+  display: inline-block; margin-bottom: 1.2rem;
+}
+.split-card h3 {
+  font-family: 'Syne', sans-serif; font-size: 1.3rem;
+  font-weight: 700; margin-bottom: 0.8rem; line-height: 1.2;
+}
+.split-card p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+/* ── CTA ── */
+.cta {
+  margin: 0 3rem 6rem; border-radius: 20px;
+  background: rgba(0,180,216,0.06);
+  border: 1px solid rgba(0,180,216,0.15);
+  padding: 5rem 3rem; text-align: center;
+}
+.cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700; letter-spacing: -0.02em;
+  max-width: 560px; margin: 0 auto 1rem;
+}
+.cta p { color: rgba(255,255,255,0.45); margin-bottom: 2rem; font-size: 0.95rem; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.8rem;
+}
+.footer-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+.footer-logo span { color: var(--teal); }
+footer p { font-size: 0.78rem; color: var(--gray); }
+footer a { color: var(--teal); text-decoration: none; font-size: 0.82rem; }
+footer a:hover { opacity: 0.75; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .what, .for-who { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .cta { margin: 0 1.5rem 4rem; padding: 3rem 1.5rem; }
+  .divider { margin: 0 1.5rem; }
+  footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+  .cards { grid-template-columns: 1fr; }
+  .split { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Linked<span>AI</span></a>
+  <a href="mailto:info@linkedai.ca" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow"></div>
+  <div class="hero-eyebrow"><span class="dot"></span> Winnipeg, Canada</div>
+  <h1>AI automation for<br>every <em>small business.</em></h1>
+  <p class="hero-desc">
+    LinkedAI delivers proven AI and automation solutions to small and medium businesses — built affordably, designed to franchise, and powered by the next generation of technical talent.
+  </p>
+  <div class="hero-actions">
+    <a href="mailto:info@linkedai.ca" class="btn-p">Get a free automation</a>
+    <a href="#what-we-do" class="btn-s">Learn more</a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT WE DO -->
+<div class="what" id="what-we-do">
+  <div class="what-header">
+    <span class="label">What we do</span>
+    <h2>We eliminate the manual work<br>slowing your business down.</h2>
+    <p>From invoice automation to workflow triggers — we identify where your team is losing time and build the solution.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">01</div>
+      <h3>Identify the bottleneck</h3>
+      <p>We come into your business, learn your processes, and find exactly where automation creates the most value.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <h3>Build and deploy</h3>
+      <p>We build a solution that works inside your existing software. No new tools to learn, no disruption to your team.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <h3>It runs itself</h3>
+      <p>Ongoing support and maintenance included. Your automation keeps working — and keeps improving — month after month.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FOR WHO -->
+<div class="for-who">
+  <span class="label">Who it's for</span>
+  <div class="split">
+    <div class="split-card">
+      <span class="tag">Small businesses</span>
+      <h3>Stop losing time to tasks that should run themselves.</h3>
+      <p>The average business spends 2,000 hours a year on manual, repetitive work. That's $48,000 in salary doing nothing productive. We fix that — at a fraction of what traditional firms charge.</p>
+    </div>
+    <div class="split-card">
+      <span class="tag">Next-gen talent</span>
+      <h3>Build your own operation with a proven system behind you.</h3>
+      <p>LinkedAI is designed to franchise. We are building a network of technically capable operators — CS graduates, engineers, builders — who want to run their own AI business with real infrastructure and real support behind them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <span class="label">Let's talk</span>
+  <h2>Ready to automate your business?</h2>
+  <p>Whether you're a business owner or someone who wants to build — reach out.</p>
+  <div class="cta-actions">
+    <a href="mailto:info@linkedai.ca" class="btn-p">info@linkedai.ca</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Linked<span>AI</span></div>
+  <p>© 2026 LinkedAI Inc. Winnipeg, Manitoba.</p>
+  <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>
+</footer>
+
+</body>
+</html>
