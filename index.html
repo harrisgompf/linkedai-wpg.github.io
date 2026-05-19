@@ -210,12 +210,14 @@
           <p class="sp reveal">We're onboarding our first wave of Canadian SMBs. Tell us about your business and we'll show you exactly what AI can do for you.</p>
         </div>
         <form class="contact-form reveal" id="contact-form" style="transition-delay:.12s">
+          <input type="hidden" name="access_key" value="d1ae8af9-a28f-44ad-ad9f-e7ca512b3bfd" />
+          <input type="hidden" name="subject" value="New Contact - LinkedAI Website" />
           <div class="form-row">
-            <input type="text" placeholder="Your name" required />
-            <input type="email" placeholder="Work email" required />
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Work email" required />
           </div>
-          <input type="text" placeholder="Company name" />
-          <textarea placeholder="What would you like to automate?" rows="4" required></textarea>
+          <input type="text" name="company" placeholder="Company name" />
+          <textarea name="message" placeholder="What would you like to automate?" rows="4" required></textarea>
           <button type="submit" class="btn-primary" id="submit-btn">
             Send Message <span class="btn-arrow">→</span>
           </button>
@@ -275,14 +277,29 @@
     document.querySelectorAll('.snum').forEach(el => co.observe(el));
 
     // Contact form
-    document.getElementById('contact-form').addEventListener('submit', e => {
+    document.getElementById('contact-form').addEventListener('submit', async e => {
       e.preventDefault();
       const btn = document.getElementById('submit-btn');
-      btn.innerHTML = 'Sent ✓';
-      btn.style.background = '#00c853';
-      btn.style.boxShadow = '0 0 30px rgba(0,200,83,0.45)';
+      btn.innerHTML = 'Sending...';
       btn.disabled = true;
-      e.target.reset();
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(e.target)
+        });
+        if (res.ok) {
+          btn.innerHTML = 'Sent ✓';
+          btn.style.background = '#00c853';
+          btn.style.boxShadow = '0 0 30px rgba(0,200,83,0.45)';
+          e.target.reset();
+        } else {
+          btn.innerHTML = 'Failed — try again';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.innerHTML = 'Failed — try again';
+        btn.disabled = false;
+      }
     });
   </script>
 </body>
