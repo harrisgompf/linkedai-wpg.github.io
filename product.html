@@ -318,53 +318,57 @@
     });
 
     // ── Apple-style video scrub ──
-    const video       = document.getElementById('scrub-video');
-    const section     = document.getElementById('video-scrub');
-    const scrubBar    = document.getElementById('scrub-bar');
-    const loadingEl   = document.getElementById('video-loading');
-    const hintEl      = document.getElementById('video-hint');
+    const video     = document.getElementById('scrub-video');
+    const section   = document.getElementById('video-scrub');
+    const scrubBar  = document.getElementById('scrub-bar');
+    const loadingEl = document.getElementById('video-loading');
+    const hintEl    = document.getElementById('video-hint');
 
-    let ready = false;
-    let rafId = null;
-    let lastProgress = -1;
+    let duration = 0;
+    let ticking  = false;
 
-    // Hide spinner once enough data is buffered
-    video.addEventListener('canplaythrough', () => {
-      ready = true;
-      loadingEl.classList.add('hidden');
-    });
-    // Fallback: hide after metadata loads even if not fully buffered
-    video.addEventListener('loadedmetadata', () => {
-      setTimeout(() => loadingEl.classList.add('hidden'), 800);
-    });
-
-    function getScrubProgress() {
-      const rect    = section.getBoundingClientRect();
-      const maxScroll = section.offsetHeight - window.innerHeight;
-      return Math.max(0, Math.min(1, -rect.top / maxScroll));
+    // Respect prefers-reduced-motion: just play normally instead of scrubbing
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      video.muted = true;
+      video.loop  = true;
+      video.play().catch(() => {});
     }
 
-    function applyScrub() {
-      rafId = null;
-      const progress = getScrubProgress();
-      if (Math.abs(progress - lastProgress) < 0.0001) return;
-      lastProgress = progress;
+    // Cache duration once metadata is ready
+    const onLoaded = () => { duration = video.duration || 0; update(); };
+    if (video.readyState >= 1) onLoaded();
+    video.addEventListener('loadedmetadata', onLoaded);
 
-      if (video.duration) {
-        video.currentTime = progress * video.duration;
+    // Hide spinner once buffered; fallback after 800ms
+    video.addEventListener('canplaythrough', () => loadingEl.classList.add('hidden'));
+    video.addEventListener('loadedmetadata', () =>
+      setTimeout(() => loadingEl.classList.add('hidden'), 800)
+    );
+
+    function update() {
+      ticking = false;
+      if (!duration || reducedMotion) return;
+
+      const rect      = section.getBoundingClientRect();
+      const scrollable = rect.height - window.innerHeight;
+      const progress  = scrollable > 0
+        ? Math.min(Math.max(-rect.top / scrollable, 0), 1)
+        : 0;
+
+      const targetTime = progress * duration;
+      // Skip seeks smaller than one frame (~16ms at 60fps) — matches ScrollHero.tsx
+      if (Math.abs(video.currentTime - targetTime) > 0.016) {
+        video.currentTime = targetTime;
       }
-      scrubBar.style.width = (progress * 100) + '%';
 
-      // Fade out the scroll hint once user starts scrolling into the section
+      scrubBar.style.width = (progress * 100) + '%';
       hintEl.style.opacity = progress < 0.03 ? '1' : '0';
     }
 
-    window.addEventListener('scroll', () => {
-      if (!rafId) rafId = requestAnimationFrame(applyScrub);
-    }, { passive: true });
-
-    // Kick off initial state once metadata is ready
-    video.addEventListener('loadedmetadata', applyScrub);
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
   </script>
 </body>
 </html>
