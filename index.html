@@ -7,12 +7,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.97/build/spline-viewer.js"></script>
 </head>
 <body>
 
   <!-- ── Spline background ── -->
   <div class="spline-bg">
-    <iframe src='https://my.spline.design/unchained-xtTdSljALQfR7kT0udfnV1ua/' frameborder='0' width='100%' height='100%'></iframe>
+    <spline-viewer url="https://prod.spline.design/7YL9maWpFVxKxJPa/scene.splinecode"></spline-viewer>
   </div>
 
   <div class="cursor-glow" id="cursor-glow"></div>
@@ -95,13 +96,13 @@
     <div class="container">
       <div class="section-head center">
         <h2 class="sh2 reveal">What LinkedAI can do<br><span class="cyan">for your business</span></h2>
-        <p class="sp reveal">AI and automation built specifically around how your business operates — fully tailored to your workflows.</p>
+        <p class="sp reveal">AI and automation built specifically around how your business operates, fully tailored to your workflows.</p>
       </div>
       <div class="sol-grid single">
         <div class="sol-card reveal">
           <span class="sol-num">01</span>
           <h3>Custom AI Solutions</h3>
-          <p>We build AI tools from the ground up around your specific business processes, integrations, and goals — not off-the-shelf templates.</p>
+          <p>We build AI tools from the ground up around your specific business processes, integrations, and goals. No off-the-shelf templates.</p>
           <ul>
             <li>Industry-specific AI models</li>
             <li>Full API &amp; integration support</li>
@@ -286,11 +287,11 @@
           btn.style.boxShadow = '0 0 30px rgba(0,200,83,0.45)';
           e.target.reset();
         } else {
-          btn.innerHTML = 'Failed — try again';
+          btn.innerHTML = 'Failed. Try again.';
           btn.disabled = false;
         }
       } catch {
-        btn.innerHTML = 'Failed — try again';
+        btn.innerHTML = 'Failed. Try again.';
         btn.disabled = false;
       }
     });
