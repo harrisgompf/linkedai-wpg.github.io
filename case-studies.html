@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — LinkedAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cs-hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding: 140px 40px 100px;
+      text-align: center;
+    }
+    .cs-hero h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      letter-spacing: -.05em;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .cs-hero p {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 52px;
+    }
+    .coming-soon-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 52px 64px;
+      border: 1px solid var(--bord);
+      border-radius: 20px;
+      background: var(--card);
+      box-shadow: 0 2px 20px rgba(0,0,0,.06);
+      max-width: 500px;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .cs-icon {
+      font-size: 3rem;
+    }
+    .coming-soon-card h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: var(--text);
+    }
+    .coming-soon-card p {
+      font-size: .98rem;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.65;
+      text-align: center;
+      max-width: 320px;
+      margin: 0;
+    }
+    .cs-notify-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border: 1px solid rgba(0,200,255,.3);
+      border-radius: 8px;
+      color: var(--cyan);
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--c08);
+      transition: all .2s;
+      margin-top: 4px;
+    }
+    .cs-notify-btn:hover {
+      background: var(--c08);
+      border-color: var(--cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="spline-bg">
+    <iframe src='https://my.spline.design/unchained-xtTdSljALQfR7kT0udfnV1ua/' frameborder='0' width='100%' height='100%'></iframe>
+  </div>
+
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.png" class="logo-img" alt="LinkedAI"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+        <svg class="logo-svg-fallback" width="62" height="32" viewBox="0 0 124 64" fill="none" style="display:none">
+          <defs>
+            <filter id="gfl" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="url(#rgr)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="rgba(48,64,220,.12)" stroke="#4060ea" stroke-width="4.5" filter="url(#gfr)"/>
+          <rect x="46" y="24" width="32" height="16" rx="8" fill="#c8f0ff" filter="url(#gfc)"/>
+        </svg>
+        <span class="logo-text">Linked<span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="case-studies.html" style="color:var(--cyan)">Case Studies</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="btn-nav" href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="cs-hero">
+    <h1>Case <span class="cyan">Studies</span></h1>
+    <p>Real results from real Canadian businesses. See exactly how LinkedAI transformed their operations.</p>
+
+    <div class="coming-soon-card reveal">
+      <h2>More coming soon</h2>
+      <p>We're currently onboarding our first wave of clients. Case studies will be published here as we deliver results.</p>
+      <a href="index.html#contact" class="cs-notify-btn">Get in touch <span>→</span></a>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    const glow = document.getElementById('cursor-glow');
+    let cx = -500, cy = -500;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+    const ro = new IntersectionObserver(
+      es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
