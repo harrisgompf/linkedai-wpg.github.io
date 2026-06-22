@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Business Brain — LinkedAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ── Product Hero ── */
+    .product-hero {
+      min-height: 100svh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+      padding: 140px 40px 100px;
+      text-align: center; overflow: hidden;
+    }
+    .product-hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 900;
+      letter-spacing: -.05em; line-height: 1.0; margin-bottom: 28px;
+      color: var(--text);
+    }
+    .product-hero h1 .word-brain {
+      color: var(--cyan); display: block;
+    }
+    .product-hero-sub {
+      font-size: clamp(1.1rem, 2vw, 1.28rem); font-weight: 600;
+      color: var(--muted); line-height: 1.7;
+      max-width: 580px; margin: 0 auto 44px;
+    }
+    .hero-scroll-hint {
+      position: absolute; bottom: 38px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-size: .75rem; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--muted);
+      opacity: .6;
+    }
+    .scroll-line-wrap { height: 40px; }
+
+    /* ── Video Scrub Section ── */
+    .video-scrub-section {
+      position: relative;
+      height: 500vh;
+      z-index: 1;
+    }
+    .video-sticky {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    #scrub-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      pointer-events: none;
+    }
+    /* Loading overlay */
+    .video-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+      transition: opacity .5s;
+      z-index: 2;
+    }
+    .video-loading.hidden { opacity: 0; pointer-events: none; }
+    .loading-spinner {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.15);
+      border-top-color: rgba(255,255,255,.7);
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    /* Scroll progress bar */
+    .scrub-progress {
+      position: absolute;
+      bottom: 36px; left: 50%; transform: translateX(-50%);
+      width: 100px; height: 2px;
+      background: rgba(255,255,255,.18);
+      border-radius: 2px; overflow: hidden;
+      z-index: 3;
+    }
+    .scrub-bar {
+      height: 100%; width: 0%;
+      background: rgba(255,255,255,.75);
+      border-radius: 2px;
+      will-change: width;
+    }
+    /* Scroll hint inside video */
+    .video-scroll-hint {
+      position: absolute;
+      bottom: 52px; left: 50%; transform: translateX(-50%);
+      font-size: .7rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: rgba(255,255,255,.45);
+      white-space: nowrap; z-index: 3;
+      transition: opacity .4s;
+    }
+
+    /* ── Features ── */
+    .features-section { position: relative; z-index: 1; padding: 100px 0; border-top: 1px solid var(--bord); }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2px; max-width: 1100px; margin: 60px auto 0;
+      border: 1px solid var(--bord); border-radius: var(--r); overflow: hidden;
+    }
+    .feat-card {
+      padding: 44px 40px; background: var(--card);
+      border-right: 1px solid var(--bord); border-bottom: 1px solid var(--bord);
+      position: relative; overflow: hidden;
+    }
+    .feat-card:nth-child(even) { border-right: none; }
+    .feat-card:nth-last-child(-n+2) { border-bottom: none; }
+    .feat-num { font-size: .7rem; font-weight: 700; letter-spacing: .15em; color: var(--cyan); opacity: .5; margin-bottom: 20px; font-family: monospace; }
+    .feat-card h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: 12px; line-height: 1.3; color: var(--text); }
+    .feat-card p { font-size: .98rem; font-weight: 500; color: var(--muted); line-height: 1.68; }
+
+    /* ── Use Cases ── */
+    .usecases-section { position: relative; z-index: 1; padding: 100px 0; border-top: 1px solid var(--bord); }
+    .usecase-list { max-width: 800px; margin: 60px auto 0; display: flex; flex-direction: column; }
+    .usecase-item {
+      padding: 32px 0; border-bottom: 1px solid var(--bord);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity .6s, transform .6s;
+    }
+    .usecase-item.visible { opacity: 1; transform: translateY(0); }
+    .usecase-item:last-child { border-bottom: none; }
+    .usecase-item h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -.02em; color: var(--text); }
+    .usecase-item p { font-size: .96rem; font-weight: 500; color: var(--muted); line-height: 1.65; }
+
+    /* ── Product CTA ── */
+    .product-cta { position: relative; z-index: 1; padding: 120px 0; text-align: center; border-top: 1px solid var(--bord); }
+    .product-cta h2 { font-size: clamp(2.2rem,5vw,3.6rem); font-weight: 900; letter-spacing: -.04em; line-height: 1.1; margin-bottom: 20px; color: var(--text); }
+    .product-cta p { font-size: 1.12rem; font-weight: 600; color: var(--muted); max-width: 480px; margin: 0 auto 44px; line-height: 1.7; }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .feat-card:nth-child(even) { border-right: 1px solid var(--bord); }
+      .feat-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--bord); }
+      .feat-card:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.png" class="logo-img" alt="LinkedAI"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+        <svg class="logo-svg-fallback" width="62" height="32" viewBox="0 0 124 64" fill="none" style="display:none">
+          <defs>
+            <filter id="gfl" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="url(#rgr)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="rgba(48,64,220,.12)" stroke="#4060ea" stroke-width="4.5" filter="url(#gfr)"/>
+          <rect x="46" y="24" width="32" height="16" rx="8" fill="#c8f0ff" filter="url(#gfc)"/>
+        </svg>
+        <span class="logo-text">Linked<span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html" style="color:var(--cyan)">Product</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="btn-nav" href="index.html#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ── Product Hero ── -->
+  <section class="product-hero">
+    <h1>The<span class="word-brain">Business Brain</span></h1>
+    <p class="product-hero-sub">A custom AI built from your company's own data, trained on your documents, history, and processes, so your team always has the answer.</p>
+    <div class="hero-ctas">
+      <a href="index.html#contact" class="btn-primary">Get Early Access <span class="btn-arrow">→</span></a>
+      <a href="#video-scrub" class="btn-outline">See How It Works</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-line-wrap"><div class="scroll-line"></div></div>
+    </div>
+  </section>
+
+  <!-- ── Scroll-Scrubbed Video ── -->
+  <div class="video-scrub-section" id="video-scrub">
+    <div class="video-sticky">
+      <video id="scrub-video" muted playsinline preload="auto" webkit-playsinline>
+        <source src="brain.mp4" type="video/mp4">
+      </video>
+      <div class="video-loading" id="video-loading">
+        <div class="loading-spinner"></div>
+      </div>
+      <div class="video-scroll-hint" id="video-hint">Scroll to explore</div>
+      <div class="scrub-progress">
+        <div class="scrub-bar" id="scrub-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Features ── -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="sh2 reveal">Built from your data.<br><span class="cyan">Runs like your best employee.</span></h2>
+        <p class="sp reveal">The Business Brain ingests everything your company knows and makes it instantly accessible to everyone on your team.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feat-card reveal">
+          <div class="feat-num">01</div>
+          <h3>Total Knowledge Ingestion</h3>
+          <p>Upload SOPs, contracts, HR policies, email threads, Slack exports, and spreadsheets. The Brain reads it all and builds a knowledge layer unique to your business.</p>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.07s">
+          <div class="feat-num">02</div>
+          <h3>Plain-Language Q&amp;A</h3>
+          <p>Anyone on your team can ask the Brain a question in plain English and get an accurate, sourced answer with a direct link to the exact page it came from.</p>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.14s">
+          <div class="feat-num">03</div>
+          <h3>Zero Hallucinations</h3>
+          <p>The Brain only answers from your company's actual documents. It never fabricates information or pulls from the internet unless you specifically ask it to. Every answer is grounded in your data.</p>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.21s">
+          <div class="feat-num">04</div>
+          <h3>Employee Onboarding Mode</h3>
+          <p>New hires ask the Brain how things work: processes, policies, who to contact. No more interrupting their manager every five minutes for things that are already documented.</p>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.28s">
+          <div class="feat-num">05</div>
+          <h3>Private to Your Business</h3>
+          <p>Your data never leaves your environment. The Brain is trained exclusively on your company's documents and stays entirely within your control.</p>
+        </div>
+        <div class="feat-card reveal" style="transition-delay:.35s">
+          <div class="feat-num">06</div>
+          <h3>Cited Sources, Every Time</h3>
+          <p>Every answer includes a direct reference to the source document and page it came from, so your team can verify and trust what the Brain tells them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Use Cases ── -->
+  <section class="usecases-section">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="sh2 reveal">Who asks the Brain?</h2>
+        <p class="sp reveal">Every role in your company benefits from instant access to institutional knowledge.</p>
+      </div>
+      <div class="usecase-list">
+        <div class="usecase-item"><h4>New Employees</h4><p>"How do I submit an expense report?" Answered instantly, with a link to the correct form. No supervisor needed for the small stuff.</p></div>
+        <div class="usecase-item"><h4>Customer Support Teams</h4><p>"What's the warranty on the Model X unit?" The Brain pulls from your product manuals and past tickets to give the rep an accurate, confident answer in seconds.</p></div>
+        <div class="usecase-item"><h4>Sales Representatives</h4><p>"What case studies do we have for manufacturing clients?" The Brain surfaces relevant win stories, pricing notes, and objection handling from your entire sales history.</p></div>
+        <div class="usecase-item"><h4>Operations Managers</h4><p>"Show me the SOP for our warehouse receiving process." Find any process document and make sure the whole team is working off the same playbook.</p></div>
+        <div class="usecase-item"><h4>HR &amp; Compliance</h4><p>"Are we compliant with the updated overtime regulations?" The Brain cross-references your policy documents against compliance guides to flag any gaps.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="product-cta">
+    <div class="container">
+      <h2 class="reveal">Ready to give your business<br><span class="cyan">a brain?</span></h2>
+      <p class="reveal">We're building the Business Brain for a select group of Canadian SMBs. Tell us about your company and we'll get you set up.</p>
+      <div style="display:flex;justify-content:center">
+        <a href="index.html#contact" class="btn-primary reveal">Get Early Access <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner"><p class="footer-copy">© 2026 LinkedAI Ltd.</p></div>
+  </footer>
+
+  <script>
+    // ── Cursor glow ──
+    const glow = document.getElementById('cursor-glow');
+    let cx = -500, cy = -500;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
+
+    // ── Nav scroll ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+    // ── Scroll reveal ──
+    const ro = new IntersectionObserver(
+      es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    const uo = new IntersectionObserver(
+      es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll('.usecase-item').forEach((el, i) => {
+      el.style.transitionDelay = (i * 0.08) + 's';
+      uo.observe(el);
+    });
+
+    // ── Apple-style video scrub ──
+    const video     = document.getElementById('scrub-video');
+    const section   = document.getElementById('video-scrub');
+    const scrubBar  = document.getElementById('scrub-bar');
+    const loadingEl = document.getElementById('video-loading');
+    const hintEl    = document.getElementById('video-hint');
+
+    let duration = 0;
+    let ticking  = false;
+
+    // Respect prefers-reduced-motion: just play normally instead of scrubbing
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) {
+      video.muted = true;
+      video.loop  = true;
+      video.play().catch(() => {});
+    }
+
+    // Cache duration once metadata is ready
+    const onLoaded = () => { duration = video.duration || 0; update(); };
+    if (video.readyState >= 1) onLoaded();
+    video.addEventListener('loadedmetadata', onLoaded);
+
+    // Hide spinner once buffered; fallback after 800ms
+    video.addEventListener('canplaythrough', () => loadingEl.classList.add('hidden'));
+    video.addEventListener('loadedmetadata', () =>
+      setTimeout(() => loadingEl.classList.add('hidden'), 800)
+    );
+
+    function update() {
+      ticking = false;
+      if (!duration || reducedMotion) return;
+
+      const rect      = section.getBoundingClientRect();
+      const scrollable = rect.height - window.innerHeight;
+      const progress  = scrollable > 0
+        ? Math.min(Math.max(-rect.top / scrollable, 0), 1)
+        : 0;
+
+      const targetTime = progress * duration;
+      // Skip seeks smaller than one frame (~16ms at 60fps) — matches ScrollHero.tsx
+      if (Math.abs(video.currentTime - targetTime) > 0.016) {
+        video.currentTime = targetTime;
+      }
+
+      scrubBar.style.width = (progress * 100) + '%';
+      hintEl.style.opacity = progress < 0.03 ? '1' : '0';
+    }
+
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+  </script>
+</body>
+</html>

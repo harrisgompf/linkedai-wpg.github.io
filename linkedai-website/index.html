@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedAI — AI Automation for Canadian SMBs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Spline background ── -->
+  <div class="spline-bg">
+    <iframe src='https://my.spline.design/unchained-xtTdSljALQfR7kT0udfnV1ua/' frameborder='0' width='100%' height='100%'></iframe>
+  </div>
+
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#">
+        <!-- Chain link logo: swap src to "logo.png" once you save the file there -->
+        <img src="logo.png" class="logo-img" alt="LinkedAI"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+        <svg class="logo-svg-fallback" width="62" height="32" viewBox="0 0 124 64" fill="none" style="display:none">
+          <defs>
+            <filter id="gfl" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="url(#rgr)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="rgba(48,64,220,.12)" stroke="#4060ea" stroke-width="4.5" filter="url(#gfr)"/>
+          <rect x="46" y="24" width="32" height="16" rx="8" fill="#c8f0ff" filter="url(#gfc)"/>
+        </svg>
+        <span class="logo-text">Linked<span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#solutions">Solutions</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn-nav" href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI Automation &nbsp;·&nbsp; Canada
+      </div>
+      <h1 class="hero-h1">
+        The AI layer for<br>
+        <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">Canadian SMBs</span></span>
+      </h1>
+      <p class="hero-sub">LinkedAI gives small and medium businesses the power of enterprise AI without the cost, complexity, or risk.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary">Contact Us <span class="btn-arrow">→</span></a>
+        <a href="#solutions" class="btn-outline">Explore Solutions</a>
+      </div>
+    </div>
+
+    <div class="scroll-line-wrap">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── Stats strip ── -->
+  <div class="stats-strip" id="stats">
+    <div class="stats-inner">
+      <div class="strip-stat reveal">
+        <span class="snum" data-target="73">0</span><span class="sunit">%</span>
+        <p>of Canadian SMBs have not yet adopted AI</p>
+      </div>
+      <div class="strip-sep"></div>
+      <div class="strip-stat reveal" style="transition-delay:.09s">
+        <span class="snum" data-target="1.2" data-dec="1">0</span><span class="sunit">M+</span>
+        <p>SMBs in Canada ready for intelligent automation</p>
+      </div>
+      <div class="strip-sep"></div>
+      <div class="strip-stat reveal" style="transition-delay:.18s">
+        <span class="snum" data-target="40">0</span><span class="sunit">%</span>
+        <p>average productivity gain from AI automation</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Solutions ── -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <div class="section-head center">
+        <span class="stag reveal">Solutions</span>
+        <h2 class="sh2 reveal">What LinkedAI can do<br><span class="cyan">for your business</span></h2>
+        <p class="sp reveal">Two ways to bring AI to your business — a fast bolt-on template or a fully custom build.</p>
+      </div>
+      <div class="sol-grid">
+        <div class="sol-card reveal">
+          <span class="sol-num">01</span>
+          <div class="sol-icon">🧩</div>
+          <h3>Bolt-On Templates</h3>
+          <p>Ready-to-deploy AI tools for the most common SMB use cases — up and running in hours, not months.</p>
+          <ul>
+            <li>AI lead scraper &amp; prospecting</li>
+            <li>AI receipt &amp; expense tracker</li>
+            <li>AI customer support chatbot</li>
+            <li>AI invoice processor</li>
+          </ul>
+          <a class="sol-link" href="#contact">Get started <span>→</span></a>
+        </div>
+        <div class="sol-card reveal" style="transition-delay:.1s">
+          <span class="sol-num">02</span>
+          <div class="sol-icon">🛠️</div>
+          <h3>Custom AI Solutions</h3>
+          <p>Bespoke AI tools built specifically around how your business operates — fully tailored to your workflows.</p>
+          <ul>
+            <li>Industry-specific AI models</li>
+            <li>Full API &amp; integration support</li>
+            <li>Connect 200+ business apps</li>
+            <li>Ongoing optimization</li>
+          </ul>
+          <a class="sol-link" href="#contact">Learn more <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="stag reveal">Why LinkedAI</span>
+          <h2 class="sh2 reveal">Enterprise AI,<br><span class="cyan">SMB price.</span></h2>
+          <p class="sp reveal">73% of Canadian small businesses haven't touched AI yet — not because they don't want to, but because every existing tool assumes a team of engineers and a six-figure budget.</p>
+          <p class="sp reveal" style="transition-delay:.08s">LinkedAI changes that. We build AI solutions that fit your budget, your team size, and Canadian compliance requirements out of the box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Achievement ── -->
+  <section class="achievement-section" id="achievement">
+    <div class="container">
+      <div class="ach-header reveal">
+        <span class="stag">Recognition</span>
+        <h2 class="sh2">RampUp 2026 — <span class="cyan">Winners</span></h2>
+        <p class="sp">Recognized for our mission to bring accessible AI automation to Canada's 1.2 million small and medium businesses. We took home the championship belt and $10,000.</p>
+      </div>
+      <div class="ach-photos reveal" style="transition-delay:.1s">
+        <!--
+          Save your photos as:
+            rampup1.jpg  →  the handshake photo
+            rampup2.jpg  →  the big check / winners photo
+          in /Users/kaedanloewen/test/ and they'll appear here automatically.
+        -->
+        <div class="ach-photo-wrap">
+          <img src="rampup2.png" alt="LinkedAI RampUp 2026 Winners — $10,000 cheque"
+               onerror="this.parentElement.classList.add('ach-photo-placeholder')"/>
+        </div>
+        <div class="ach-photo-wrap">
+          <img src="rampup1.JPG" alt="LinkedAI team on stage at RampUp 2026"
+               onerror="this.parentElement.classList.add('ach-photo-placeholder')"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Team ── -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-head center">
+        <span class="stag reveal">Team</span>
+        <h2 class="sh2 reveal">Meet the <span class="cyan">Co-Founders</span></h2>
+        <a href="https://www.linkedin.com/company/linkedai-wpg/posts/?feedView=all" target="_blank" class="company-li-link reveal">Follow LinkedAI on LinkedIn →</a>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">NK</div>
+          <h3 class="team-name">Nick Kozlowski</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/nick-kozlowski-31347a2b1/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.08s">
+          <div class="team-avatar">HG</div>
+          <h3 class="team-name">Harris Gompf</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/harrisgompf/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.16s">
+          <div class="team-avatar">KL</div>
+          <h3 class="team-name">Kaedan Loewen</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/kaedan-loewen-9aa563383/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Featured Posts ── -->
+  <section class="posts-section" id="posts">
+    <div class="container">
+      <div class="section-head center">
+        <span class="stag reveal">Featured</span>
+        <h2 class="sh2 reveal">In the <span class="cyan">Spotlight</span></h2>
+      </div>
+      <div class="posts-grid reveal">
+        <div class="post-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7449561238981828611" frameborder="0" allowfullscreen title="Nick Kozlowski — LinkedIn post"></iframe>
+        </div>
+        <div class="post-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7449930030412972032" frameborder="0" allowfullscreen title="North Forge — RampUp 2026"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-text">
+          <span class="stag reveal">Get Started</span>
+          <h2 class="sh2 reveal">Ready to automate<br><span class="cyan">your business?</span></h2>
+          <p class="sp reveal">We're onboarding our first wave of Canadian SMBs. Tell us about your business and we'll show you exactly what AI can do for you.</p>
+          <div class="contact-perks reveal" style="transition-delay:.1s">
+            <div class="perk"><span class="pcheck">✓</span> Free initial consultation</div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form" style="transition-delay:.12s">
+          <div class="form-row">
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Work email" required />
+          </div>
+          <input type="text" placeholder="Company name" />
+          <textarea placeholder="What would you like to automate?" rows="4" required></textarea>
+          <button type="submit" class="btn-primary" id="submit-btn">
+            Send Message <span class="btn-arrow">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Cursor glow
+    const glow = document.getElementById('cursor-glow');
+    let cx = -500, cy = -500;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
+
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+    // Scroll reveal
+    const ro = new IntersectionObserver(
+      es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+    // Hero cycle
+    const words = ['Canadian SMBs', 'Small Business', 'Your Team', 'Any Industry'];
+    let wi = 0;
+    const cyc = document.getElementById('hero-cycle');
+    setInterval(() => {
+      cyc.classList.add('fade-out');
+      setTimeout(() => { wi = (wi + 1) % words.length; cyc.textContent = words[wi]; cyc.classList.remove('fade-out'); }, 360);
+    }, 3000);
+
+    // Stats counter
+    function countUp(el) {
+      const target = parseFloat(el.dataset.target), dec = el.dataset.dec === '1';
+      const dur = 2000, t0 = performance.now();
+      (function loop(now) {
+        const p = Math.min((now - t0) / dur, 1), ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = dec ? (target * ease).toFixed(1) : Math.round(target * ease);
+        if (p < 1) requestAnimationFrame(loop);
+      })(t0);
+    }
+    const co = new IntersectionObserver(
+      es => es.forEach(e => { if (e.isIntersecting) { countUp(e.target); co.unobserve(e.target); } }),
+      { threshold: 0.5 }
+    );
+    document.querySelectorAll('.snum').forEach(el => co.observe(el));
+
+    // Contact form
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.innerHTML = 'Sent ✓';
+      btn.style.background = '#00c853';
+      btn.style.boxShadow = '0 0 30px rgba(0,200,83,0.45)';
+      btn.disabled = true;
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
