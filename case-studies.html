@@ -7,17 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.97/build/spline-viewer.js"></script>
   <style>
+    html, body { background: #ffffff; }
+    .spline-bg { display: none; }
     .cs-hero {
-      min-height: 100svh;
+      min-height: 46svh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       z-index: 1;
-      padding: 140px 40px 100px;
+      padding: 160px 40px 72px;
       text-align: center;
     }
     .cs-hero h1 {
@@ -25,74 +26,220 @@
       font-weight: 900;
       letter-spacing: -.05em;
       line-height: 1.05;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     .cs-hero p {
-      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
       font-weight: 600;
       color: var(--muted);
       line-height: 1.7;
-      max-width: 520px;
-      margin: 0 auto 52px;
+      max-width: 480px;
+      margin: 0 auto;
     }
-    .coming-soon-card {
-      display: inline-flex;
+
+    /* ── Grid ── */
+    .cs-section {
+      position: relative;
+      z-index: 1;
+      padding: 32px 52px 120px;
+    }
+    .cs-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* ── Photo card ── */
+    .cs-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .cs-card-photo {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(135deg, #c8dcf0 0%, #dce8f5 50%, #b8d0e8 100%);
+      cursor: pointer;
+    }
+    /* placeholder art — hidden once real photo loads */
+    .cs-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
-      padding: 52px 64px;
-      border: 1px solid var(--bord);
-      border-radius: 20px;
-      background: var(--card);
-      box-shadow: 0 2px 20px rgba(0,0,0,.06);
-      max-width: 500px;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(0,80,160,.35);
+    }
+    .cs-photo-placeholder svg {
+      width: 56px; height: 56px;
+      opacity: .5;
+    }
+    .cs-photo-placeholder span {
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: .6;
+    }
+    .cs-card-photo img.cs-photo {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      margin-top: 20px;
+      height: 100%;
+      object-fit: cover;
+      display: none; /* shown via JS once src loads */
     }
-    .cs-icon {
-      font-size: 3rem;
+    .cs-card-photo img.cs-photo.loaded {
+      display: block;
     }
-    .coming-soon-card h2 {
-      font-size: 1.5rem;
+
+    /* logo bubble */
+    .cs-logo-bubble {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,.22);
+      overflow: hidden;
+      padding: 0;
+      z-index: 2;
+    }
+    .cs-logo-bubble img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    /* text fallback if logo not yet saved */
+    .cs-logo-bubble .logo-text-fallback {
+      font-size: .42rem;
+      font-weight: 800;
+      color: #cc0000;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: .01em;
+      display: none;
+    }
+
+    /* hover overlay */
+    .cs-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,20,60,.52);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .25s;
+      border-radius: 18px;
+    }
+    .cs-card-photo:hover .cs-hover-overlay { opacity: 1; }
+    .cs-read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 13px 26px;
+      background: #ffffff;
+      border-radius: 10px;
+      font-size: .92rem;
+      font-weight: 700;
+      color: #0b1628;
+      letter-spacing: -.01em;
+      box-shadow: 0 4px 24px rgba(0,0,0,.2);
+      transform: translateY(6px);
+      transition: transform .25s;
+    }
+    .cs-card-photo:hover .cs-read-btn { transform: translateY(0); }
+
+    /* card text below photo */
+    .cs-card-title {
+      font-size: 1.35rem;
       font-weight: 800;
       letter-spacing: -.03em;
       color: var(--text);
+      line-height: 1.2;
     }
-    .coming-soon-card p {
-      font-size: .98rem;
-      font-weight: 500;
-      color: var(--muted);
-      line-height: 1.65;
-      text-align: center;
-      max-width: 320px;
-      margin: 0;
-    }
-    .cs-notify-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 26px;
-      border: 1px solid rgba(0,200,255,.3);
-      border-radius: 8px;
-      color: var(--cyan);
-      font-size: .9rem;
+    .cs-card-result {
+      font-size: .95rem;
       font-weight: 600;
-      text-decoration: none;
-      background: var(--c08);
-      transition: all .2s;
+      color: var(--muted);
+      line-height: 1.55;
       margin-top: 4px;
     }
-    .cs-notify-btn:hover {
-      background: var(--c08);
-      border-color: var(--cyan);
+    .cs-card-result strong {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    /* coming soon slot */
+    .cs-soon-card {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .cs-soon-photo {
+      border-radius: 18px;
+      aspect-ratio: 4 / 5;
+      border: 2px dashed rgba(0,130,200,.22);
+      background: rgba(0,130,200,.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cs-soon-inner {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 24px;
+    }
+    .cs-soon-inner span {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 180px;
+    }
+    .cs-soon-dot {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 2px dashed rgba(0,130,200,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+    .cs-soon-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: -.02em;
+    }
+
+    @media (max-width: 900px) {
+      .cs-grid { grid-template-columns: repeat(2, 1fr); }
+      .cs-section { padding: 24px 28px 80px; }
+    }
+    @media (max-width: 560px) {
+      .cs-grid { grid-template-columns: 1fr; gap: 40px; }
     }
   </style>
 </head>
 <body>
-
-  <div class="spline-bg">
-    <spline-viewer url="https://prod.spline.design/7YL9maWpFVxKxJPa/scene.splinecode"></spline-viewer>
-  </div>
 
   <div class="cursor-glow" id="cursor-glow"></div>
 
@@ -108,7 +255,7 @@
             <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
             <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
-            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
           </defs>
           <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
           <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
@@ -130,20 +277,54 @@
 
   <!-- ── Hero ── -->
   <section class="cs-hero">
-    <h1>Case <span class="cyan">Studies</span></h1>
-    <p>Real results from real Canadian businesses. See exactly how LinkedAI transformed their operations.</p>
+    <h1>Client <span class="cyan">Wins</span></h1>
+    <p>Real Canadian businesses. Real results. See exactly how LinkedAI transformed their operations.</p>
+  </section>
 
-    <div class="coming-soon-card reveal">
-      <h2>More coming soon</h2>
-      <p>We're currently onboarding our first wave of clients. Case studies will be published here as we deliver results.</p>
-      <a href="index.html#contact" class="cs-notify-btn">Get in touch <span>→</span></a>
+  <!-- ── Grid ── -->
+  <section class="cs-section">
+    <div class="cs-grid">
+
+      <!-- Lisa's Story -->
+      <div class="cs-card reveal">
+        <a href="lisa-story.html" class="cs-card-photo">
+          <!-- Placeholder until real photo is added -->
+          <div class="cs-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            <span>Photo coming soon</span>
+          </div>
+          <!-- Real photo: save your image as lisa-photo.png to show it here -->
+          <!-- <img class="cs-photo" src="lisa-photo.png" alt="Lisa from Precept Management"
+               onload="this.classList.add('loaded')" /> -->
+
+          <!-- Lisa photo bubble -->
+          <div class="cs-logo-bubble">
+            <img src="lisa-photo.png" alt="Lisa" style="object-fit:cover;border-radius:50%;width:100%;height:100%;padding:0;" />
+          </div>
+
+          <!-- Hover overlay -->
+          <div class="cs-hover-overlay">
+            <div class="cs-read-btn">
+              Read Story &rarr;
+            </div>
+          </div>
+        </a>
+        <div>
+          <div class="cs-card-title">Lisa's Story</div>
+          <div class="cs-card-result">Bookkeeping went from <strong>3 days to 30 minutes</strong>, saving 23.5 hours a month and <strong>98% faster</strong> expense tracking reconciliation</div>
+        </div>
+      </div>
+
+
     </div>
   </section>
 
   <!-- ── Footer ── -->
   <footer class="footer">
     <div class="container footer-inner">
-      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
+      <p class="footer-copy">&copy; 2026 LinkedAI Ltd.</p>
     </div>
   </footer>
 
