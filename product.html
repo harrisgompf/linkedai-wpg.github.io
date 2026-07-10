@@ -179,7 +179,7 @@
         <a href="index.html">Home</a>
         <a href="product.html" style="color:var(--cyan)">Product</a>
         <a href="case-studies.html">Case Studies</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="index.html#contact">Contact Us</a>
       </div>
       <a class="btn-nav" href="index.html#contact">Contact Us</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
@@ -191,7 +191,7 @@
     <a href="index.html">Home</a>
     <a href="product.html" class="active">Product</a>
     <a href="case-studies.html">Case Studies</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact">Contact Us</a>
   </div>
 
   <!-- ── Product Hero ── -->
@@ -347,9 +347,10 @@
     let duration = 0;
     let ticking  = false;
 
-    // Respect prefers-reduced-motion: just play normally instead of scrubbing
+    // On mobile or reduced-motion: just autoplay instead of scrubbing
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reducedMotion) {
+    const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+    if (reducedMotion || isMobile) {
       video.muted = true;
       video.loop  = true;
       video.play().catch(() => {});
