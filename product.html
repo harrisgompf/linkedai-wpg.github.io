@@ -353,19 +353,8 @@
     let duration = 0;
     let ticking  = false;
 
-    // On mobile or reduced-motion: just autoplay instead of scrubbing
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
-    if (reducedMotion || isMobile) {
-      video.muted = true;
-      video.loop  = true;
-      video.play().catch(() => {});
-    }
-
-    // Cache duration once metadata is ready
-    const onLoaded = () => { duration = video.duration || 0; update(); };
-    if (video.readyState >= 1) onLoaded();
-    video.addEventListener('loadedmetadata', onLoaded);
 
     // Hide spinner once buffered; fallback after 800ms
     video.addEventListener('canplaythrough', () => loadingEl.classList.add('hidden'));
@@ -373,29 +362,36 @@
       setTimeout(() => loadingEl.classList.add('hidden'), 800)
     );
 
-    function update() {
-      ticking = false;
-      if (!duration || reducedMotion) return;
+    if (isMobile || reducedMotion) {
+      // Mobile: autoplay once, no scroll scrubbing
+      video.muted = true;
+      video.loop  = false;
+      video.play().catch(() => {});
+    } else {
+      // Desktop: scroll-scrub behaviour
+      const onLoaded = () => { duration = video.duration || 0; update(); };
+      if (video.readyState >= 1) onLoaded();
+      video.addEventListener('loadedmetadata', onLoaded);
 
-      const rect      = section.getBoundingClientRect();
-      const scrollable = rect.height - window.innerHeight;
-      const progress  = scrollable > 0
-        ? Math.min(Math.max(-rect.top / scrollable, 0), 1)
-        : 0;
-
-      const targetTime = progress * duration;
-      // Skip seeks smaller than one frame (~16ms at 60fps) — matches ScrollHero.tsx
-      if (Math.abs(video.currentTime - targetTime) > 0.016) {
-        video.currentTime = targetTime;
+      function update() {
+        ticking = false;
+        if (!duration) return;
+        const rect      = section.getBoundingClientRect();
+        const scrollable = rect.height - window.innerHeight;
+        const progress  = scrollable > 0
+          ? Math.min(Math.max(-rect.top / scrollable, 0), 1)
+          : 0;
+        if (Math.abs(video.currentTime - progress * duration) > 0.016) {
+          video.currentTime = progress * duration;
+        }
+        scrubBar.style.width = (progress * 100) + '%';
+        hintEl.style.opacity = progress < 0.03 ? '1' : '0';
       }
 
-      scrubBar.style.width = (progress * 100) + '%';
-      hintEl.style.opacity = progress < 0.03 ? '1' : '0';
+      const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
     }
-
-    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
   </script>
 </body>
 </html>
