@@ -10,23 +10,6 @@
 </head>
 <body>
 
-  <!-- ── Spline background — desktop only ── -->
-  <div class="spline-bg" id="spline-bg"></div>
-
-  <script>
-    // Only load Spline on desktop with pointer (non-touch) devices to avoid mobile crashes
-    if (window.matchMedia('(min-width: 1024px) and (pointer: fine)').matches) {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = 'https://unpkg.com/@splinetool/viewer@1.12.97/build/spline-viewer.js';
-      script.onload = () => {
-        const viewer = document.createElement('spline-viewer');
-        viewer.setAttribute('url', 'https://prod.spline.design/7YL9maWpFVxKxJPa/scene.splinecode');
-        document.getElementById('spline-bg').appendChild(viewer);
-      };
-      document.head.appendChild(script);
-    }
-  </script>
 
   <div class="cursor-glow" id="cursor-glow"></div>
 
