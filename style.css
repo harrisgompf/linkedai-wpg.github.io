@@ -31,6 +31,12 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
   filter: invert(1) hue-rotate(180deg) brightness(1.05);
   opacity: 0.9;
 }
+@media (max-width: 768px) {
+  .spline-bg spline-viewer {
+    width: 100%; height: 100%;
+    transform: translate(-50%, -50%) rotate(-18deg) scale(2.2);
+  }
+}
 
 /* ── Cursor glow ── */
 .cursor-glow { pointer-events: none; position: fixed; z-index: 9999; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(0,130,200,.07) 0%, transparent 65%); transform: translate(-50%,-50%); transition: left .05s linear, top .05s linear; }

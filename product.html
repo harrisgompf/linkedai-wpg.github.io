@@ -60,6 +60,11 @@
       display: block;
       pointer-events: none;
     }
+    @media (max-width: 768px) {
+      .video-scrub-section { height: 100vh; }
+      .video-sticky { position: relative; height: auto; }
+      #scrub-video { width: 100%; height: auto; max-height: 60vh; object-fit: contain; }
+    }
     /* Loading overlay */
     .video-loading {
       position: absolute;
