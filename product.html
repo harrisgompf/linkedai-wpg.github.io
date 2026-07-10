@@ -62,8 +62,8 @@
     }
     @media (max-width: 768px) {
       .video-scrub-section { height: auto !important; }
-      .video-sticky { position: relative !important; height: 260px !important; overflow: hidden; }
-      #scrub-video { width: 100% !important; height: 260px !important; object-fit: cover !important; }
+      .video-sticky { position: relative !important; height: auto !important; background: #000; }
+      #scrub-video { width: 100% !important; height: auto !important; max-height: 50vh !important; object-fit: contain !important; display: block !important; }
       .scrub-progress, .video-scroll-hint { display: none; }
     }
     /* Loading overlay */
