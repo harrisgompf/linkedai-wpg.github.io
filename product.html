@@ -61,9 +61,10 @@
       pointer-events: none;
     }
     @media (max-width: 768px) {
-      .video-scrub-section { height: 100vh; }
-      .video-sticky { position: relative; height: auto; }
-      #scrub-video { width: 100%; height: auto; max-height: 60vh; object-fit: contain; }
+      .video-scrub-section { height: auto !important; }
+      .video-sticky { position: relative !important; height: 260px !important; overflow: hidden; }
+      #scrub-video { width: 100% !important; height: 260px !important; object-fit: cover !important; }
+      .scrub-progress, .video-scroll-hint { display: none; }
     }
     /* Loading overlay */
     .video-loading {
