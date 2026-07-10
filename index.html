@@ -44,8 +44,17 @@
         <a href="#contact">Contact</a>
       </div>
       <a class="btn-nav" href="#contact">Contact Us</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="product.html">Product</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <!-- ── Hero ── -->
   <section class="hero" id="hero">
@@ -224,6 +233,17 @@
 
   <script>
     // Cursor glow
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
     const glow = document.getElementById('cursor-glow');
     let cx = -500, cy = -500;
     document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
