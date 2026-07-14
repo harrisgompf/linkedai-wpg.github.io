@@ -89,6 +89,89 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 .scroll-line { width: 1px; height: 100%; background: linear-gradient(to bottom, var(--cyan), transparent); animation: sline 2.1s ease-in-out infinite; transform-origin: top; }
 @keyframes sline { 0%,100%{opacity:0;transform:scaleY(0)} 50%{opacity:1;transform:scaleY(1)} }
 
+/* ── Platforms ticker ── */
+.ticker-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 48px 0 52px;
+  border-top: 1px solid var(--bord);
+  border-bottom: 1px solid var(--bord);
+  background: rgba(255,255,255,.6);
+  overflow: hidden;
+}
+.ticker-label {
+  text-align: center;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.ticker-sub {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 28px;
+  margin-top: -10px;
+}
+.ticker-track-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.ticker-track-wrap::before,
+.ticker-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ticker-track-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(255,255,255,.95), transparent);
+}
+.ticker-track-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(255,255,255,.95), transparent);
+}
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: ticker-scroll 28s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+.ticker-track span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  padding: 0 28px;
+  opacity: .75;
+  transition: opacity .2s;
+}
+.ticker-track span:hover { opacity: 1; }
+.ticker-dot {
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 50% !important;
+  background: var(--bord2) !important;
+  padding: 0 !important;
+  flex-shrink: 0;
+  opacity: .5 !important;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
 /* ── Stats strip ── */
 .stats-strip { border-top: 1px solid var(--bord); border-bottom: 1px solid var(--bord); padding: 40px 52px; position: relative; z-index: 1; background: rgba(255,255,255,.6); }
 .stats-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-around; gap: 40px; flex-wrap: wrap; }
