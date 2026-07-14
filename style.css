@@ -101,12 +101,12 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
 }
 .ticker-label {
   text-align: center;
-  font-size: .68rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin-bottom: 12px;
 }
 .ticker-sub {
   text-align: center;
@@ -144,7 +144,6 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-u
   width: max-content;
   animation: ticker-scroll 28s linear infinite;
 }
-.ticker-track:hover { animation-play-state: paused; }
 .ticker-track span {
   font-size: 1rem;
   font-weight: 600;
