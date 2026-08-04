@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | LinkedAI</title>
+  <meta name="description" content="How LinkedAI Ltd. collects, uses, and protects personal information on linkedai.ca, in accordance with PIPEDA, Quebec Law 25, and the GDPR." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html, body { background: #ffffff; }
+    .spline-bg { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ── Nav ── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.png" class="logo-img" alt="LinkedAI"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+        <svg class="logo-svg-fallback" width="62" height="32" viewBox="0 0 124 64" fill="none" style="display:none">
+          <defs>
+            <filter id="gfl" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="url(#rgr)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="rgba(48,64,220,.12)" stroke="#4060ea" stroke-width="4.5" filter="url(#gfr)"/>
+          <rect x="46" y="24" width="32" height="16" rx="8" fill="#c8f0ff" filter="url(#gfc)"/>
+        </svg>
+        <span class="logo-text">Linked<span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
+      <a class="btn-nav" href="index.html#contact">Contact Us</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="product.html">Product</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="index.html#contact">Contact Us</a>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section class="legal-hero">
+    <h1>Privacy <span class="cyan">Policy</span></h1>
+    <div class="legal-dates">Last updated: August 4, 2026</div>
+  </section>
+
+  <!-- ── Body ── -->
+  <section class="legal-section">
+    <div class="legal-body">
+
+      <!-- Plain-English summary -->
+      <div class="legal-summary">
+        <h2>The short version</h2>
+        <ul>
+          <li>We collect the name, email, company, and message you send us through our contact form. That's it for information you actively give us.</li>
+          <li>We do not use analytics, advertising trackers, or tracking pixels, and we do not set any cookies of our own on linkedai.ca.</li>
+          <li>We never sell your personal information, and we never share it with anyone for their own marketing.</li>
+          <li>Some of the services that make this website work — our web host, our form handler, our font and 3D-graphics providers, and LinkedIn's post embeds — receive limited technical data such as your IP address.</li>
+          <li>You can ask us at any time what we hold about you, have it corrected, or have it deleted. Email <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>.</li>
+        </ul>
+        <p class="legal-summary-note">This summary is here for readability. The full policy below is the part that governs.</p>
+      </div>
+
+      <!-- Table of contents -->
+      <nav class="legal-toc" aria-label="Table of contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#who-we-are">1. Who we are</a></li>
+          <li><a href="#scope">2. Scope of this policy</a></li>
+          <li><a href="#what-we-collect">3. Information we collect</a></li>
+          <li><a href="#why">4. Why we collect it</a></li>
+          <li><a href="#consent">5. Consent</a></li>
+          <li><a href="#cookies">6. Cookies and tracking</a></li>
+          <li><a href="#sharing">7. Who we share information with</a></li>
+          <li><a href="#transfers">8. Storage outside Canada</a></li>
+          <li><a href="#client-data">9. Client data in our services</a></li>
+          <li><a href="#retention">10. How long we keep information</a></li>
+          <li><a href="#security">11. How we protect information</a></li>
+          <li><a href="#your-rights">12. Your rights</a></li>
+          <li><a href="#quebec">13. Quebec residents (Law 25)</a></li>
+          <li><a href="#gdpr">14. EU and UK residents (GDPR)</a></li>
+          <li><a href="#children">15. Children</a></li>
+          <li><a href="#third-party-sites">16. Links to other websites</a></li>
+          <li><a href="#changes">17. Changes to this policy</a></li>
+          <li><a href="#contact">18. How to contact us</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="who-we-are">1. Who we are</h2>
+      <p>LinkedAI Ltd. ("<strong>LinkedAI</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") is a company based in Winnipeg, Manitoba, Canada. We build custom artificial intelligence and automation solutions for Canadian small and medium-sized businesses.</p>
+      <p>We are responsible for the personal information under our control. Our privacy contact — the individual accountable for our compliance with this policy and with applicable privacy law — can be reached at <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>.</p>
+
+      <h2 id="scope">2. Scope of this policy</h2>
+      <p>This policy explains how we handle personal information collected through our website at <strong>linkedai.ca</strong> and through our general business communications, including inquiries you send us and correspondence during a sales conversation.</p>
+      <p>This policy does <strong>not</strong> govern how we handle the data your business entrusts to us during a paid engagement — for example the documents, records, and systems connected to a custom automation or a Business Brain deployment. That relationship is governed by the written services agreement and any data processing terms signed between LinkedAI and your organization. Section 9 explains the general principles we apply, but the signed agreement controls.</p>
+
+      <h2 id="what-we-collect">3. Information we collect</h2>
+
+      <h3>3.1 Information you give us directly</h3>
+      <p>When you submit the contact form on our website, we collect:</p>
+      <ul>
+        <li>Your name</li>
+        <li>Your email address</li>
+        <li>Your company name (optional)</li>
+        <li>The content of your message, including anything you choose to tell us about what you would like to automate</li>
+      </ul>
+      <p>If you email us, connect with us on LinkedIn, or speak with us during a sales conversation, we also collect whatever information you choose to share in that exchange — typically your role, your company, and details about your business needs.</p>
+      <p>Please do not send us sensitive personal information — such as health information, financial account numbers, or government identifiers — through the contact form. It is not the right channel for it.</p>
+
+      <h3>3.2 Information collected automatically</h3>
+      <p>Our website is a static site hosted on GitHub Pages. We do not run analytics software, advertising trackers, session recording, or heat mapping on it, and we do not maintain our own web-server logs.</p>
+      <p>However, like any website, technical information is necessarily transmitted to the providers that deliver it to your browser. Our host and the third-party services embedded in our pages may automatically receive:</p>
+      <ul>
+        <li>Your IP address</li>
+        <li>Your browser type, version, and operating system</li>
+        <li>The page you requested and the date and time of the request</li>
+        <li>The referring page, if you arrived from a link elsewhere</li>
+      </ul>
+      <p>This information is processed by those providers under their own privacy policies, primarily for delivering content, security, and abuse prevention. We do not have access to individualized logs of your visit.</p>
+
+      <h3>3.3 Third-party content embedded in our pages</h3>
+      <p>Our website loads the following third-party resources, each of which can receive your IP address and basic technical data when a page loads:</p>
+      <ul>
+        <li><strong>Google Fonts</strong> — supplies the typeface used across the site.</li>
+        <li><strong>Spline</strong> and <strong>unpkg</strong> — deliver the animated 3D background on our home page.</li>
+        <li><strong>LinkedIn</strong> — our home page embeds public LinkedIn posts. LinkedIn may set its own cookies through these embeds and, if you are logged in to LinkedIn, may associate the visit with your LinkedIn account. This is LinkedIn's processing, not ours, and is governed by LinkedIn's privacy policy.</li>
+      </ul>
+
+      <h2 id="why">4. Why we collect it</h2>
+      <p>We collect personal information only for purposes a reasonable person would consider appropriate in the circumstances. Specifically:</p>
+      <ul>
+        <li><strong>To respond to you.</strong> If you submit the contact form or email us, we use your information to reply, answer your questions, and discuss whether our services fit your business.</li>
+        <li><strong>To provide and administer our services.</strong> If your business becomes a client, we use business contact information to deliver, support, and invoice for the engagement.</li>
+        <li><strong>To improve our website and offering.</strong> We use the substance of inquiries — not identities — to understand what Canadian businesses are asking for.</li>
+        <li><strong>To meet legal and regulatory obligations,</strong> including tax, accounting, and record-keeping requirements.</li>
+        <li><strong>To protect our business,</strong> including preventing fraud, abuse, and misuse of our website.</li>
+      </ul>
+      <p>We do not use your personal information to make automated decisions that produce legal or similarly significant effects about you, and we do not use the personal information collected through this website to train artificial intelligence models.</p>
+
+      <h2 id="consent">5. Consent</h2>
+      <p>In most cases, we rely on your consent. When you fill in our contact form and submit it, you are consenting to our collecting and using that information to respond to you. Consent for the technical information described in section 3.2 is implied by your visiting the site, since that information is required to deliver the pages to you.</p>
+      <p>You may withdraw your consent at any time, subject to legal or contractual restrictions and reasonable notice, by emailing <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>. Withdrawing consent may mean we can no longer respond to your inquiry or continue providing a service to you. We will tell you if that is the case.</p>
+      <p>In limited circumstances we may collect, use, or disclose personal information without consent where the law permits or requires it — for example to investigate a breach of an agreement, to comply with a court order or lawful demand, or in an emergency threatening someone's life, health, or security.</p>
+
+      <h2 id="cookies">6. Cookies and tracking</h2>
+      <p><strong>LinkedAI does not set any cookies on linkedai.ca.</strong> We do not use advertising cookies, analytics cookies, or tracking pixels, and we do not build advertising profiles or engage in cross-site tracking.</p>
+      <p>The third-party embeds described in section 3.3 — most notably the LinkedIn post embeds on our home page — may set their own cookies in your browser. You can block or delete these through your browser settings. Blocking them will not affect your ability to use our website; at most, an embedded LinkedIn post may not display.</p>
+      <p>Our website does not currently respond to "Do Not Track" browser signals, because we do not track visitors across sites in the first place.</p>
+
+      <h2 id="sharing">7. Who we share information with</h2>
+      <p><strong>We do not sell your personal information. We do not rent, trade, or otherwise disclose it to third parties for their own marketing purposes.</strong></p>
+      <p>We share personal information only in these situations:</p>
+      <ul>
+        <li><strong>Service providers.</strong> We use a small number of third-party providers to operate our website and business. They may access personal information only to perform services for us, and are required to protect it.</li>
+        <li><strong>Professional advisors.</strong> Our accountants, lawyers, insurers, and similar advisors, where necessary and under a duty of confidentiality.</li>
+        <li><strong>Legal requirements.</strong> Where we are required to disclose information by law, regulation, court order, or a lawful request from a government or law-enforcement authority.</li>
+        <li><strong>Business transfers.</strong> If LinkedAI is involved in a merger, acquisition, financing, or sale of assets, personal information may be transferred as part of that transaction. We will require the recipient to continue protecting it under terms consistent with this policy, and will notify you if it becomes subject to a materially different policy.</li>
+      </ul>
+      <p>The providers we currently rely on are:</p>
+      <div class="legal-table-wrap">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th scope="col">Provider</th>
+              <th scope="col">What it does for us</th>
+              <th scope="col">Data it may receive</th>
+              <th scope="col">Location</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GitHub Pages</td>
+              <td>Hosts and serves this website</td>
+              <td>IP address, browser and request data</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Web3Forms</td>
+              <td>Receives contact form submissions and delivers them to us by email</td>
+              <td>Name, email, company, message, IP address</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Google Fonts</td>
+              <td>Delivers the site typeface</td>
+              <td>IP address, browser data</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Spline / unpkg</td>
+              <td>Delivers the animated 3D background</td>
+              <td>IP address, browser data</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>LinkedIn</td>
+              <td>Embedded public posts on our home page</td>
+              <td>IP address, browser data, LinkedIn cookies</td>
+              <td>United States</td>
+            </tr>
+            <tr>
+              <td>Email &amp; productivity tools</td>
+              <td>Business email and document storage used to correspond with you</td>
+              <td>Your correspondence with us</td>
+              <td>Canada / United States</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>This list reflects the providers in use as of the date at the top of this policy. If we add or change a provider in a way that materially affects your personal information, we will update this table.</p>
+
+      <h2 id="transfers">8. Storage outside Canada</h2>
+      <p>As the table above shows, several of our providers are located in the United States, and personal information you submit through this website is stored and processed there. While it is outside Canada, that information is subject to the laws of the United States, and may be accessible to United States courts, law enforcement, and national security authorities under those laws.</p>
+      <p>We take reasonable contractual and other measures to ensure our providers give personal information a comparable level of protection to what it would receive in Canada. If you would like more information about our practices in respect of service providers outside Canada, contact us at <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>.</p>
+
+      <h2 id="client-data">9. Client data in our services</h2>
+      <p>When your business engages LinkedAI, we may work with data your organization controls — documents, records, systems, and the personal information of your employees or customers contained in them.</p>
+      <p>In that context, <strong>your organization is the owner of that data and we act on your instructions.</strong> As a general matter:</p>
+      <ul>
+        <li>We use client data only to deliver, support, and improve the specific solution we built for you, as set out in our agreement with you.</li>
+        <li>We do not use client data to train general-purpose AI models, and we do not use one client's data to serve another client.</li>
+        <li>We do not sell client data.</li>
+        <li>Access is limited to the LinkedAI personnel who need it to do the work.</li>
+        <li>Where a solution relies on third-party infrastructure or AI providers, we identify those providers to you and configure them according to the terms of our agreement.</li>
+        <li>On termination, we return or delete client data in accordance with the agreement.</li>
+      </ul>
+      <p>If you are an individual whose personal information was provided to us by a LinkedAI client, we handle that information on that client's behalf. Please direct your access, correction, or deletion requests to that organization; if you contact us, we will refer you to them and assist them in responding.</p>
+      <p>The specific commitments that apply to any given engagement — including security controls, data location, sub-processors, and retention — are the ones written into your signed agreement with us.</p>
+
+      <h2 id="retention">10. How long we keep information</h2>
+      <p>We keep personal information only as long as we need it for the purposes described in this policy, or as long as the law requires.</p>
+      <ul>
+        <li><strong>Inquiries that do not become an engagement:</strong> we keep the correspondence for up to <strong>24 months</strong>, in case you come back to us, and then delete it.</li>
+        <li><strong>Client records:</strong> we keep them for the duration of the engagement and for up to <strong>7 years</strong> afterward, to meet Canadian tax, accounting, and limitation-period requirements.</li>
+        <li><strong>Client data inside a delivered solution:</strong> handled according to the retention terms of your services agreement.</li>
+      </ul>
+      <p>When personal information is no longer needed, we delete it or render it anonymous.</p>
+
+      <h2 id="security">11. How we protect information</h2>
+      <p>We use security safeguards appropriate to the sensitivity of the information we hold. These include access controls and authentication on the accounts and systems that hold personal information, encryption in transit (our website is served over HTTPS) and at rest where our providers support it, limiting access to personnel who need it, using reputable providers with established security practices, and reviewing our practices as our business grows.</p>
+      <p>No method of transmitting or storing information is completely secure. While we work to protect your personal information, we cannot guarantee absolute security, and any transmission is at your own risk. If we become aware of a breach of security safeguards involving your personal information that creates a real risk of significant harm, we will notify you and the appropriate regulators as required by law.</p>
+
+      <h2 id="your-rights">12. Your rights</h2>
+      <p>Subject to limited legal exceptions, you have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal information we hold about you, and be told how it has been used and to whom it has been disclosed.</li>
+        <li><strong>Correct</strong> information that is inaccurate or incomplete.</li>
+        <li><strong>Withdraw consent</strong> to our continued use of your information.</li>
+        <li><strong>Request deletion</strong> of your information, where we have no legal or business reason to keep it.</li>
+        <li><strong>Ask questions</strong> about this policy or our practices, and complain if you are not satisfied with our answer.</li>
+      </ul>
+      <p>To exercise any of these rights, email <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>. We will respond within <strong>30 days</strong>. We may need to verify your identity before acting on a request, and we will not charge you a fee unless the request is unusually extensive — in which case we will tell you the cost in advance and give you the option to withdraw the request.</p>
+      <p>There are narrow circumstances where we may not be able to give you access, such as where doing so would reveal personal information about someone else, disclose confidential commercial information, or is prohibited by law. If we refuse a request, we will explain why in writing.</p>
+
+      <h2 id="quebec">13. Quebec residents (Law 25)</h2>
+      <p>If you are in Quebec, Quebec's <em>Act respecting the protection of personal information in the private sector</em>, as amended by Law 25, gives you the following additional rights:</p>
+      <ul>
+        <li><strong>De-indexing and cessation of dissemination.</strong> You may ask us to stop disseminating your personal information, or to de-index any link that gives access to it, where the dissemination causes you serious injury to your reputation or privacy.</li>
+        <li><strong>Portability.</strong> You may ask to receive the computerized personal information you provided to us in a structured, commonly used technological format, or to have it transferred to another organization.</li>
+        <li><strong>Information about automated decisions.</strong> If we ever make a decision about you based exclusively on automated processing, you may ask what personal information was used, what the principal factors were, and to have the decision reviewed by a person.</li>
+        <li><strong>Notice before transfer outside Quebec.</strong> Section 8 of this policy discloses that personal information may be stored outside Quebec and Canada. We conduct the assessments required before making such transfers.</li>
+      </ul>
+      <p>Our Privacy Officer for the purposes of Law 25 can be reached at <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>. If you are not satisfied with our response, you may complain to the <em>Commission d'accès à l'information du Québec</em> at <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noopener">cai.gouv.qc.ca</a>.</p>
+
+      <h2 id="gdpr">14. EU and UK residents (GDPR)</h2>
+      <p>If you are in the European Economic Area, Switzerland, or the United Kingdom, this section applies to you in addition to the rest of this policy. LinkedAI Ltd. is the <strong>controller</strong> of the personal information described here.</p>
+      <p>Our lawful bases for processing are:</p>
+      <ul>
+        <li><strong>Consent</strong> — when you submit the contact form or otherwise reach out to us. You may withdraw consent at any time.</li>
+        <li><strong>Performance of a contract</strong> — when we are delivering services to your organization or taking steps at your request before entering an agreement.</li>
+        <li><strong>Legitimate interests</strong> — operating and securing our website, responding to business inquiries, and maintaining business records, where those interests are not overridden by your rights.</li>
+        <li><strong>Legal obligation</strong> — where retention or disclosure is required by law.</li>
+      </ul>
+      <p>In addition to the rights in section 12, you have the right to restrict or object to processing, the right to data portability, the right to erasure, and the right not to be subject to a decision based solely on automated processing that produces legal or similarly significant effects. You also have the right to lodge a complaint with your local supervisory authority, or with the UK Information Commissioner's Office at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+      <p>Personal information you provide is transferred to and stored in Canada and the United States. Canada benefits from an <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/adequacy-decisions_en" target="_blank" rel="noopener">adequacy decision</a> from the European Commission in respect of personal data covered by PIPEDA. Where personal information is transferred to providers in other countries, we rely on appropriate safeguards such as standard contractual clauses.</p>
+
+      <h2 id="children">15. Children</h2>
+      <p>Our website and services are directed at businesses, not at children. We do not knowingly collect personal information from anyone under the age of 16. If you believe a child has provided us with personal information, contact us at <a href="mailto:info@linkedai.ca">info@linkedai.ca</a> and we will delete it.</p>
+
+      <h2 id="third-party-sites">16. Links to other websites</h2>
+      <p>Our website links to other sites, including LinkedIn profiles for our team and company. This policy does not apply to those sites. We are not responsible for their content or their privacy practices, and we encourage you to read the privacy policy of any site you visit.</p>
+
+      <h2 id="changes">17. Changes to this policy</h2>
+      <p>We may update this policy as our business, our website, or the law changes. The "Last updated" date at the top of the page always reflects the current version. If we make a material change to how we handle personal information we have already collected, we will take reasonable steps to notify you — for example by email, if we have your address and the change affects you — before the change takes effect. Your continued use of the website after an update means you accept the revised policy.</p>
+
+      <h2 id="contact">18. How to contact us</h2>
+      <div class="legal-contact">
+        <p>Questions, requests, or complaints about privacy at LinkedAI can be sent to:</p>
+        <p>
+          <strong>Privacy Officer</strong><br />
+          LinkedAI Ltd.<br />
+          Winnipeg, Manitoba, Canada<br />
+          <a href="mailto:info@linkedai.ca">info@linkedai.ca</a>
+        </p>
+        <p>We take privacy complaints seriously and will investigate any concern you raise. If you are not satisfied with our response, you have the right to complain to the <strong>Office of the Privacy Commissioner of Canada</strong> at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca</a>, or to the privacy regulator in your province — for Quebec residents, the <em>Commission d'accès à l'information</em>; for residents of Alberta or British Columbia, the applicable provincial Information and Privacy Commissioner.</p>
+      </div>
+
+      <p style="margin-top:44px;font-size:.92rem">See also our <a href="terms.html">Terms of Service</a>.</p>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 LinkedAI Ltd.</p>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="footer-sep">•</span>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
+    const glow = document.getElementById('cursor-glow');
+    let cx = -500, cy = -500;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+  </script>
+</body>
+</html>
