@@ -342,7 +342,7 @@ body::after {
 /* ── Contact ── */
 .contact-section { padding: 56px 0; border-top: 1px solid var(--bord); position: relative; z-index: 1; }
 .contact-blue {
-  background: linear-gradient(180deg, #0d1e3a 0%, #0b2d52 100%);
+  background: transparent;
   border-top: none;
 }
 .contact-blue .contact-grid { align-items: center; }
