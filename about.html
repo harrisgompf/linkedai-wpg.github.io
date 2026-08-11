@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | LinkedAI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2" />
+  <style>
+    html, body { background: #ffffff; }
+
+    .achievement-section { padding-top: 160px; }
+
+    @media (max-width: 768px) {
+      .achievement-section { padding-top: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.png" class="logo-img" alt="LinkedAI"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'"/>
+        <svg class="logo-svg-fallback" width="62" height="32" viewBox="0 0 124 64" fill="none" style="display:none">
+          <defs>
+            <filter id="gfl" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfr" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="gfc" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="rgl" cx="35%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".25"/><stop offset="100%" stop-color="#4fc3f7" stop-opacity="0"/></radialGradient>
+            <radialGradient id="rgr" cx="65%" cy="45%"><stop offset="0%" stop-color="#fff" stop-opacity=".18"/><stop offset="100%" stop-color="#3050e8" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="url(#rgl)"/>
+          <rect x="3" y="8" width="68" height="48" rx="24" fill="rgba(79,195,247,.12)" stroke="#4fc3f7" stroke-width="4.5" filter="url(#gfl)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="url(#rgr)"/>
+          <rect x="53" y="8" width="68" height="48" rx="24" fill="rgba(48,64,220,.12)" stroke="#4060ea" stroke-width="4.5" filter="url(#gfr)"/>
+          <rect x="46" y="24" width="32" height="16" rx="8" fill="#c8f0ff" filter="url(#gfc)"/>
+        </svg>
+        <span class="logo-text">Linked<span class="logo-accent">AI</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html" style="color:var(--cyan)">About</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="btn-nav" href="index.html#contact">Book a Call</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="case-studies.html">Case Studies</a>
+    <a href="about.html">About</a>
+    <a href="index.html#contact">Book a Call</a>
+    <a href="index.html#contact">Contact Us</a>
+  </div>
+
+  <!-- Achievement -->
+  <section class="achievement-section" id="achievement">
+    <div class="container">
+      <div class="ach-header reveal">
+        <h2 class="sh2">RampUp 2026 <span class="cyan">Winners</span></h2>
+        <p class="sp">Recognized for our mission to bring accessible AI automation to Canada's 1.2 million small and medium businesses. We took home the championship belt and $10,000.</p>
+      </div>
+      <div class="ach-photos reveal" style="transition-delay:.1s">
+        <div class="ach-photo-wrap">
+          <img src="rampup2.png" alt="LinkedAI RampUp 2026 Winners"
+               onerror="this.parentElement.classList.add('ach-photo-placeholder')"/>
+        </div>
+        <div class="ach-photo-wrap">
+          <img src="rampup1.JPG" alt="LinkedAI team on stage at RampUp 2026"
+               onerror="this.parentElement.classList.add('ach-photo-placeholder')"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posts -->
+  <section class="posts-section" id="posts">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="sh2 reveal">In the <span class="cyan">Spotlight</span></h2>
+      </div>
+      <div class="posts-grid reveal">
+        <div class="post-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7449561238981828611" frameborder="0" allowfullscreen title="Nick Kozlowski LinkedIn post"></iframe>
+        </div>
+        <div class="post-embed">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7449930030412972032" frameborder="0" allowfullscreen title="North Forge RampUp 2026"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="team-section" id="team">
+    <div class="container">
+      <div class="section-head center">
+        <h2 class="sh2 reveal">Meet the <span class="cyan">Team</span></h2>
+        <a href="https://www.linkedin.com/company/linkedai-wpg/posts/?feedView=all" target="_blank" class="company-li-link reveal">Follow LinkedAI on LinkedIn →</a>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-avatar">NK</div>
+          <h3 class="team-name">Nick Kozlowski</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/nick-kozlowski-31347a2b1/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.07s">
+          <div class="team-avatar">HG</div>
+          <h3 class="team-name">Harris Gompf</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/harrisgompf/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.14s">
+          <div class="team-avatar">KL</div>
+          <h3 class="team-name">Kaedan Loewen</h3>
+          <p class="team-role">Co-Founder</p>
+          <a href="https://www.linkedin.com/in/kaedan-loewen-9aa563383/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.21s">
+          <div class="team-avatar">LB</div>
+          <h3 class="team-name">Lucas Berzuk</h3>
+          <p class="team-role">Forward Deployed Engineer</p>
+          <a href="https://www.linkedin.com/in/lucas-berzuk-b0b0a3300/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+        <div class="team-card reveal" style="transition-delay:.28s">
+          <div class="team-avatar">GF</div>
+          <h3 class="team-name">Gianluca Foderaro</h3>
+          <p class="team-role">Business Development Lead</p>
+          <a href="https://www.linkedin.com/in/gianluca-foderaro-687632296/" target="_blank" class="team-li">View on LinkedIn →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" style="background: rgba(255,255,255,.5);">
+    <div class="container footer-inner">
+      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('nav-hamburger');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
+    const glow = document.getElementById('cursor-glow');
+    let cx = -500, cy = -500;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+    const ro = new IntersectionObserver(
+      es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')),
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+  </script>
+</body>
+</html>
