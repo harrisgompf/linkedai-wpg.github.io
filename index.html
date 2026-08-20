@@ -54,15 +54,32 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1 class="hero-h1">
-        Simplifying AI<br>
-        <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">for businesses.</span></span>
-      </h1>
-      <p class="hero-sub">We help non-technical business owners put AI to work, without becoming developers.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">Book a Discovery Call <span class="btn-arrow">→</span></a>
-        <a href="case-studies.html" class="btn-outline">See Results</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-h1">
+          Simplifying AI<br>
+          <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">for businesses.</span></span>
+        </h1>
+        <p class="hero-sub">We help non-technical business owners put AI to work, without becoming developers.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn-primary">Book a Discovery Call <span class="btn-arrow">→</span></a>
+          <a href="case-studies.html" class="btn-outline">See Results</a>
+        </div>
+      </div>
+      <div class="hero-video-wrap demo-video-wrap">
+        <video
+          id="demo-video"
+          class="demo-video"
+          poster="website-poster.jpg"
+          playsinline
+          preload="metadata"
+          controls
+        >
+          <source src="website-demo.mp4" type="video/mp4">
+        </video>
+        <button class="demo-play-btn" id="demo-play-btn" aria-label="Play video">
+          <svg width="26" height="30" viewBox="0 0 26 30" fill="none"><path d="M25 13.27a2 2 0 0 1 0 3.46L3.5 29.4A2 2 0 0 1 .5 27.66V2.34A2 2 0 0 1 3.5.6L25 13.27Z" fill="currentColor"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -141,6 +158,20 @@
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
     }));
+
+    const demoVideo = document.getElementById('demo-video');
+    const demoPlayBtn = document.getElementById('demo-play-btn');
+    if (demoVideo && demoPlayBtn) {
+      demoVideo.controls = false;
+      demoPlayBtn.addEventListener('click', () => {
+        demoVideo.controls = true;
+        demoVideo.play();
+        demoPlayBtn.classList.add('hidden');
+      });
+      demoVideo.addEventListener('pause', () => demoPlayBtn.classList.remove('hidden'));
+      demoVideo.addEventListener('play', () => demoPlayBtn.classList.add('hidden'));
+      demoVideo.addEventListener('ended', () => demoPlayBtn.classList.remove('hidden'));
+    }
 
     const glow = document.getElementById('cursor-glow');
     let cx = -500, cy = -500;
