@@ -57,10 +57,10 @@
     <div class="hero-grid">
       <div class="hero-content">
         <h1 class="hero-h1">
-          Simplifying AI<br>
-          <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">for businesses.</span></span>
+          Start leveraging<br class="hero-br">
+          <span class="hero-cycle-wrap"><span class="hero-ai">AI</span> <span id="hero-cycle" class="hero-cycle">for your business.</span></span>
         </h1>
-        <p class="hero-sub">We help non-technical business owners put AI to work, without becoming developers.</p>
+        <p class="hero-sub">You know AI could help your business, but don&rsquo;t have the time or know-how to figure it out. LinkedAI will do it for you.</p>
         <div class="hero-ctas">
           <a href="#contact" class="btn-primary">Book a Discovery Call <span class="btn-arrow">→</span></a>
           <a href="case-studies.html" class="btn-outline">See Results</a>
@@ -84,27 +84,55 @@
     </div>
   </section>
 
+  <!-- Worked With -->
+  <section class="worked-with-section">
+    <div class="container">
+      <p class="worked-with-label">Working with</p>
+      <div class="worked-with-marquee">
+        <div class="worked-with-group">
+          <div class="worked-with-logo"><img src="precept-logo.png" alt="Precept Management Inc." /></div>
+          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="EZ Own Financing Solutions" /></div>
+          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="Global Drain Technologies" /></div>
+          <div class="worked-with-logo"><img src="kings-logo.png" alt="King's Services" /></div>
+          <div class="worked-with-logo"><img src="argus-logo.png" alt="Argus Industries" /></div>
+          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="Studio Sixteen Design &amp; Build" /></div>
+        </div>
+        <div class="worked-with-group" aria-hidden="true">
+          <div class="worked-with-logo"><img src="precept-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="kings-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="argus-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="" /></div>
+        </div>
+        <div class="worked-with-group" aria-hidden="true">
+          <div class="worked-with-logo"><img src="precept-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="kings-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="argus-logo.png" alt="" /></div>
+          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Ways to work with us -->
   <section class="ways-section" id="ways">
     <div class="container">
       <div class="section-head center">
         <h2 class="sh2">Ways to <span class="cyan">work with us.</span></h2>
       </div>
-      <div class="ways-grid">
-        <div class="way-card">
-          <h3 class="way-title">AI Assessment</h3>
-          <p class="way-desc">A 45-minute structured interview to identify bottlenecks and prescribe 3–7 AI tools and automations that will save you 5+ hours a week.</p>
-          <a href="#contact" class="way-link">Learn more →</a>
+      <div class="paths-grid">
+        <div class="path">
+          <h2 class="path-q">Have no idea where AI could benefit your business?</h2>
+          <h3 class="path-name">The AI Audit Starter Pack</h3>
+          <p class="path-desc">A structured interview with you and a few of your key employees about your bottlenecks and what&rsquo;s slowing you down. You walk away with a clear AI strategy: the tools to use and the automations that could save you the most time.</p>
         </div>
-        <div class="way-card">
-          <h3 class="way-title">AI Concierge</h3>
-          <p class="way-desc">Your own third-party AI team on a monthly retainer. We work on your projects every month, building and managing custom automations and AI tools for you.</p>
-          <a href="#contact" class="way-link">Learn more →</a>
-        </div>
-        <div class="way-card">
-          <h3 class="way-title">Company Knowledge Base</h3>
-          <p class="way-desc">A private AI trained only on your company's data, so its answers come from your business instead of guesses. Ask it questions about your business, speed up onboarding, and bring your data into one central place you can run stats on.</p>
-          <a href="#contact" class="way-link">Learn more →</a>
+        <div class="path">
+          <h2 class="path-q">Already know what you want automated?</h2>
+          <h3 class="path-name">Third-Party AI Team</h3>
+          <p class="path-desc">You&rsquo;ve spotted the workflow, but don&rsquo;t have the time or know-how to build it. We set up your tools and build the custom ones. Like an outside IT team, we become your third-party AI team.</p>
         </div>
       </div>
     </div>
@@ -115,7 +143,9 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-text">
-          <h2 class="sh2">Book your<br><span class="cyan">Discovery Call</span></h2>
+          <p class="contact-eyebrow">For more detail and to discuss which option suits you best</p>
+          <h2 class="sh2">Book a free<br><span class="cyan">Discovery Call</span></h2>
+          <p class="contact-lead">Talk with our founders <span class="cyan">Harris, Kaedan and Nick</span> about where your business is losing time. It&rsquo;s quick, <strong>free</strong> and no pressure, and you&rsquo;ll leave knowing which path makes sense for you.</p>
         </div>
         <form class="contact-form" id="contact-form">
           <input type="hidden" name="access_key" value="d1ae8af9-a28f-44ad-ad9f-e7ca512b3bfd" />
@@ -181,7 +211,7 @@
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
 
-    const words = ['for businesses.', 'for efficiency.', 'for savings.'];
+    const words = ['for your business.', 'for savings.', 'for efficiency.'];
     let wi = 0;
     const cyc = document.getElementById('hero-cycle');
     setInterval(() => {
