@@ -287,9 +287,10 @@ body::after {
 
 /* ── Achievement ── */
 .about-us { max-width: 760px; margin: 0 auto; text-align: center; }
-.ways-about { margin-top: 72px; }
+.intro-section { padding: 24px 0 72px; position: relative; z-index: 1; }
 .about-us p { color: var(--muted); font-size: 1.12rem; font-weight: 500; line-height: 1.8; margin-bottom: 18px; }
 .about-us p:last-child { margin-bottom: 0; }
+.about-us .intro-label { font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--cyan-bright); margin-bottom: 16px; }
 .achievement-section { padding: 72px 0; position: relative; z-index: 1; }
 .ach-header { text-align: center; margin-bottom: 56px; }
 .ach-header .sp { margin: 0 auto; }
