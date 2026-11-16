@@ -6,7 +6,7 @@
   <title>The Business Brain — LinkedAI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <style>
 
     /* ── Product Hero ── */
@@ -300,13 +300,30 @@
 
   <!-- ── Footer ── -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
-      <div class="footer-links">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><img src="logo.png" class="logo-img" alt="" /><span class="logo-text">Linked<span class="logo-accent">AI</span></span></a>
+        <p>AI strategy, automation and ongoing support for Canadian businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Book a Call</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-sep">•</span>
         <a href="terms.html">Terms of Service</a>
       </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/company/linkedai-wpg/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 LinkedAI Ltd. All rights reserved.</p>
     </div>
   </footer>
 
@@ -398,5 +415,7 @@
       window.addEventListener('resize', onScroll);
     }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="smooth.js?v=1"></script>
 </body>
 </html>

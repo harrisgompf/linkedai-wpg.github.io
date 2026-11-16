@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LinkedAI: AI Automation for Canadian Business Owners</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=15" />
 </head>
 <body>
-
-  <div class="cursor-glow" id="cursor-glow"></div>
 
   <!-- Nav -->
   <nav class="nav" id="nav">
@@ -53,44 +51,18 @@
   </div>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero hero-center" id="hero">
     <div class="hero-grid">
       <div class="hero-content">
         <h1 class="hero-h1">
-          Start leveraging<br class="hero-br">
-          <span class="hero-cycle-wrap"><span class="hero-ai">AI</span> <span id="hero-cycle" class="hero-cycle">for your business.</span></span>
+          <span class="hero-l1">Start leveraging <span class="hero-ai">AI</span></span><br class="hero-br">
+          <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">for your business.</span></span>
         </h1>
-        <p class="hero-sub">You know AI could help your business, but don&rsquo;t have the time or know-how to figure it out. LinkedAI will do it for you.</p>
+        <p class="hero-sub">Connect the systems you already use and optimize your existing processes.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn-primary">Book a Discovery Call <span class="btn-arrow">→</span></a>
+          <a href="#contact" class="btn-primary">Book a Discovery Call <span class="btn-arrow">&rarr;</span></a>
           <a href="case-studies.html" class="btn-outline">See Results</a>
         </div>
-      </div>
-      <div class="hero-video-wrap demo-video-wrap">
-        <video
-          id="demo-video"
-          class="demo-video"
-          poster="website-poster.jpg"
-          playsinline
-          preload="metadata"
-          controls
-        >
-          <source src="website-demo.mp4" type="video/mp4">
-        </video>
-        <button class="demo-play-btn" id="demo-play-btn" aria-label="Play video">
-          <svg width="26" height="30" viewBox="0 0 26 30" fill="none"><path d="M25 13.27a2 2 0 0 1 0 3.46L3.5 29.4A2 2 0 0 1 .5 27.66V2.34A2 2 0 0 1 3.5.6L25 13.27Z" fill="currentColor"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Us -->
-  <section class="intro-section" id="about-us">
-    <div class="container">
-      <div class="about-us">
-        <p class="intro-label">About us</p>
-        <p>In a nutshell, we&rsquo;re all about making AI accessible and practical for business owners and their teams. Think of us as your AI collaborators. From brainstorming your AI strategy to building it with you, we make sure the solutions we create together actually make your day-to-day work more efficient.</p>
-        <p>We&rsquo;re passionate about using AI to solve real problems while always keeping a human in the loop. Our goal is to help companies use AI in ways that are both innovative and responsible. We harness open-source AI and connect it to the applications you already use, so it fits right into your workflow while your data stays secure.</p>
       </div>
     </div>
   </section>
@@ -98,52 +70,159 @@
   <!-- Worked With -->
   <section class="worked-with-section">
     <div class="container">
-      <p class="worked-with-label">Working with</p>
-      <div class="worked-with-marquee">
+      <div class="worked-with-marquee" aria-label="Clients we work with">
         <div class="worked-with-group">
-          <div class="worked-with-logo"><img src="precept-logo.png" alt="Precept Management Inc." /></div>
-          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="EZ Own Financing Solutions" /></div>
-          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="Global Drain Technologies" /></div>
-          <div class="worked-with-logo"><img src="kings-logo.png" alt="King's Services" /></div>
-          <div class="worked-with-logo"><img src="argus-logo.png" alt="Argus Industries" /></div>
-          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="Studio Sixteen Design &amp; Build" /></div>
+          <img class="logo-mono logo-precept" src="precept-logo-mono.png" alt="Precept Management Inc." />
+          <img class="logo-mono logo-ezown" src="ezown-logo-mono.png" alt="EZ Own Financing Solutions" />
+          <img class="logo-mono logo-globaldrain" src="globaldrain-logo-mono.png" alt="Global Drain Technologies" />
+          <img class="logo-mono logo-kings" src="kings-logo-mono.png" alt="King&rsquo;s Services" />
+          <img class="logo-mono logo-argus" src="argus-logo-mono.png" alt="Argus Industries" />
+          <img class="logo-mono logo-studiosixteen" src="studiosixteen-logo-mono.png" alt="Studio Sixteen Design &amp; Build" />
+          <img class="logo-mono logo-wbd" src="wbd-logo-mono.png" alt="Winnipeg Building &amp; Decorating Ltd." />
+          <img class="logo-mono logo-unrau" src="unrau-logo-mono.png" alt="Unrau Livestock Ltd." />
         </div>
         <div class="worked-with-group" aria-hidden="true">
-          <div class="worked-with-logo"><img src="precept-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="kings-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="argus-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="" /></div>
+          <img class="logo-mono logo-precept" src="precept-logo-mono.png" alt="" />
+          <img class="logo-mono logo-ezown" src="ezown-logo-mono.png" alt="" />
+          <img class="logo-mono logo-globaldrain" src="globaldrain-logo-mono.png" alt="" />
+          <img class="logo-mono logo-kings" src="kings-logo-mono.png" alt="" />
+          <img class="logo-mono logo-argus" src="argus-logo-mono.png" alt="" />
+          <img class="logo-mono logo-studiosixteen" src="studiosixteen-logo-mono.png" alt="" />
+          <img class="logo-mono logo-wbd" src="wbd-logo-mono.png" alt="" />
+          <img class="logo-mono logo-unrau" src="unrau-logo-mono.png" alt="" />
         </div>
         <div class="worked-with-group" aria-hidden="true">
-          <div class="worked-with-logo"><img src="precept-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="ezown-logo-wide.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="globaldrain-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="kings-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="argus-logo.png" alt="" /></div>
-          <div class="worked-with-logo"><img src="studiosixteen-logo.png" alt="" /></div>
+          <img class="logo-mono logo-precept" src="precept-logo-mono.png" alt="" />
+          <img class="logo-mono logo-ezown" src="ezown-logo-mono.png" alt="" />
+          <img class="logo-mono logo-globaldrain" src="globaldrain-logo-mono.png" alt="" />
+          <img class="logo-mono logo-kings" src="kings-logo-mono.png" alt="" />
+          <img class="logo-mono logo-argus" src="argus-logo-mono.png" alt="" />
+          <img class="logo-mono logo-studiosixteen" src="studiosixteen-logo-mono.png" alt="" />
+          <img class="logo-mono logo-wbd" src="wbd-logo-mono.png" alt="" />
+          <img class="logo-mono logo-unrau" src="unrau-logo-mono.png" alt="" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Ways to work with us -->
+  <!-- Business Brain (scroll animation) -->
+  <section class="brain-section" id="business-brain">
+    <div class="brain-sticky">
+      <div class="brain-captions">
+        <div class="brain-cap">
+          <p class="eyebrow">The problem</p>
+          <h2 class="sh2">Today, your business runs in too many places.</h2>
+          <p class="brain-sub">Every tool has its own login, and none of them talk to each other. Nobody sees the whole picture.</p>
+        </div>
+        <div class="brain-cap">
+          <p class="eyebrow">What we do</p>
+          <h2 class="sh2">We bring it all into one brain.</h2>
+          <p class="brain-sub">Every tool, file and bit of know-how gets connected. What you don&rsquo;t need gets replaced along the way.</p>
+        </div>
+        <div class="brain-cap">
+          <p class="eyebrow">The Business Brain</p>
+          <h2 class="sh2">One place that runs your whole business.</h2>
+          <p class="brain-sub">An operating system that talks to everything you use, built around how you work. Your team stops hunting and starts deciding.</p>
+        </div>
+      </div>
+      <div class="brain-stage-wrap" id="brain-wrap">
+        <div class="brain-stage" id="brain-stage" aria-hidden="true">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
   <section class="ways-section" id="ways">
     <div class="container">
       <div class="section-head center">
-        <h2 class="sh2">Ways to <span class="cyan">work with us.</span></h2>
+        <p class="eyebrow">How it works</p>
+        <h2 class="sh2">Start with step one.<br><span class="cyan">Then decide from there.</span></h2>
+        <p class="ways-sub">Every step delivers something useful on its own, so you&rsquo;re never locked in.</p>
       </div>
-      <div class="paths-grid">
-        <div class="path">
-          <h2 class="path-q">Have no idea where AI could benefit your business?</h2>
-          <h3 class="path-name">The AI Audit Starter Pack</h3>
-          <p class="path-desc">A structured interview with you and a few of your key employees about your bottlenecks and what&rsquo;s slowing you down. You walk away with a clear AI strategy: the tools to use and the automations that could save you the most time.</p>
+
+      <div class="steps-grid">
+        <article class="scol">
+          <span class="scol-num">01</span>
+          <h3>Discovery call</h3>
+          <p class="scol-meta">Free &middot; 25 minutes</p>
+          <p>A quick, no-pressure call about where your business is losing time. We&rsquo;ll tell you honestly which starting point makes sense.</p>
+          <ul class="scol-list">
+            <li>Where your team loses time</li>
+            <li>What you&rsquo;ve already tried</li>
+            <li><strong>Not sure where AI fits?</strong> Start with the AI Audit</li>
+            <li><strong>Know what to automate?</strong> Go straight to the AI Partnership</li>
+          </ul>
+        </article>
+        <article class="scol">
+          <span class="scol-num">02</span>
+          <h3>The AI Audit Starter Pack</h3>
+          <p class="scol-meta">1-hour interview &middot; report in a week</p>
+          <p class="scol-q">Have no idea where AI could benefit your business?</p>
+          <p>A structured interview with you and a few of your key employees about your bottlenecks and what&rsquo;s slowing you down. You walk away with a clear AI strategy: the tools to use and the automations that could save you the most time.</p>
+          <ul class="scol-list">
+            <li>Process map</li>
+            <li>AI opportunities, ranked by impact and effort</li>
+            <li>Tools, costs and implementation steps</li>
+            <li>Roadmap of what to tackle first</li>
+          </ul>
+          <p class="scol-note"><strong>The plan is yours to keep.</strong> Act on it yourself, or build it with us and the audit is credited back in full within 60 days.</p>
+        </article>
+        <article class="scol">
+          <span class="scol-num">03</span>
+          <h3>The AI Partnership</h3>
+          <p class="scol-meta">Your AI team &middot; monthly</p>
+          <p>A full team of experienced AI developers, for less than one in-house hire. We set up your tools, build the custom ones and keep them running.</p>
+          <ul class="scol-list">
+            <li><strong>Kickoff:</strong> pick the first workflows, connect your tools</li>
+            <li><strong>Build:</strong> set up your AI tools and custom automations</li>
+            <li><strong>Upkeep:</strong> ongoing maintenance, fixes and improvements</li>
+          </ul>
+          <p class="scol-sub">Every plan includes</p>
+          <ul class="scol-incl">
+            <li>Tool setup</li>
+            <li>Custom builds</li>
+            <li>Same-day support</li>
+            <li>Quarterly strategy calls</li>
+            <li>Team training</li>
+            <li>Maintenance &amp; fixes</li>
+            <li>New features</li>
+            <li>You own what we build</li>
+          </ul>
+          <p class="scol-note"><strong>Done an AI Audit?</strong> It becomes our build plan and is credited back in full. <strong>Already have someone in-house?</strong> They lead, and we work alongside them. That collaboration makes for even better results.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="intro-section" id="about-us">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <p class="eyebrow">About us</p>
+          <h2 class="sh2">Your AI collaborators, <span class="cyan">from strategy to build.</span></h2>
         </div>
-        <div class="path">
-          <h2 class="path-q">Already know what you want automated?</h2>
-          <h3 class="path-name">Third-Party AI Team</h3>
-          <p class="path-desc">You&rsquo;ve spotted the workflow, but don&rsquo;t have the time or know-how to build it. We set up your tools and build the custom ones. Like an outside IT team, we become your third-party AI team.</p>
+        <div class="intro-copy">
+          <p>We&rsquo;re all about making AI accessible and practical for business owners and their teams. From brainstorming your AI strategy to building it with you, we make sure the solutions we create together actually make your day-to-day work more efficient.</p>
+          <p>Our goal is to help companies use AI in ways that are both innovative and responsible.</p>
+        </div>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20c.8-3.6 3.4-5.6 6.5-5.6s5.7 2 6.5 5.6"/></svg></span>
+          <h3>Human in the loop</h3>
+          <p>We use AI to solve real problems while always keeping a person in control of the decisions that matter.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-2.9 7.9-7 9.5-4.1-1.6-7-5.2-7-9.5V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Your data stays secure</h3>
+          <p>We harness open-source AI, so your information stays protected instead of being handed to someone else&rsquo;s platform.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/><path d="M10 6.5h4.5a3 3 0 0 1 3 3V14"/></svg></span>
+          <h3>Fits your existing tools</h3>
+          <p>We connect AI to the applications you already use, so it slots right into your workflow. Nothing to rip out.</p>
         </div>
       </div>
     </div>
@@ -152,11 +231,12 @@
   <!-- Contact -->
   <section class="contact-section contact-blue" id="contact">
     <div class="container">
+      <div class="contact-panel">
       <div class="contact-grid">
         <div class="contact-text">
           <p class="contact-eyebrow">For details, pricing, and to discuss which option suits you best</p>
           <h2 class="sh2">Book a free<br><span class="cyan">Discovery Call</span></h2>
-          <p class="contact-lead">Talk with our founders <span class="cyan">Harris, Kaedan and Nick</span> about where your business is losing time. It&rsquo;s quick, <strong>free</strong> and no pressure, and you&rsquo;ll leave knowing which path makes sense for you.</p>
+          <p class="contact-lead">Tell us where your business is losing time. It&rsquo;s quick, <strong>free</strong> and no pressure, and you&rsquo;ll leave knowing which path makes sense for you.</p>
         </div>
         <form class="contact-form" id="contact-form">
           <input type="hidden" name="access_key" value="d1ae8af9-a28f-44ad-ad9f-e7ca512b3bfd" />
@@ -173,21 +253,42 @@
           <p class="form-consent">By submitting this form you agree to our <a href="terms.html">Terms of Service</a> and consent to us handling your information as described in our <a href="privacy.html">Privacy Policy</a>.</p>
         </form>
       </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-copy">© 2026 LinkedAI Ltd.</p>
-      <div class="footer-links">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="index.html"><img src="logo.png" class="logo-img" alt="" /><span class="logo-text">Linked<span class="logo-accent">AI</span></span></a>
+        <p>AI strategy, automation and ongoing support for Canadian businesses.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="index.html">Home</a>
+        <a href="case-studies.html">Case Studies</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact">Book a Call</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
         <a href="privacy.html">Privacy Policy</a>
-        <span class="footer-sep">•</span>
         <a href="terms.html">Terms of Service</a>
       </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://www.linkedin.com/company/linkedai-wpg/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 LinkedAI Ltd. All rights reserved.</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="smooth.js?v=1"></script>
+  <script src="brain.js?v=27" defer></script>
   <script>
     const hamburger = document.getElementById('nav-hamburger');
     const mobileMenu = document.getElementById('nav-mobile-menu');
@@ -199,25 +300,6 @@
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
     }));
-
-    const demoVideo = document.getElementById('demo-video');
-    const demoPlayBtn = document.getElementById('demo-play-btn');
-    if (demoVideo && demoPlayBtn) {
-      demoVideo.controls = false;
-      demoPlayBtn.addEventListener('click', () => {
-        demoVideo.controls = true;
-        demoVideo.play();
-        demoPlayBtn.classList.add('hidden');
-      });
-      demoVideo.addEventListener('pause', () => demoPlayBtn.classList.remove('hidden'));
-      demoVideo.addEventListener('play', () => demoPlayBtn.classList.add('hidden'));
-      demoVideo.addEventListener('ended', () => demoPlayBtn.classList.remove('hidden'));
-    }
-
-    const glow = document.getElementById('cursor-glow');
-    let cx = -500, cy = -500;
-    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
-    (function tick() { glow.style.left = cx + 'px'; glow.style.top = cy + 'px'; requestAnimationFrame(tick); })();
 
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50), { passive: true });
