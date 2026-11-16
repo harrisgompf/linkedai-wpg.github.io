@@ -891,3 +891,12 @@ body::after { content: none; }
 .scol-incl { grid-template-columns: 1fr 1fr; gap: 8px 16px; }
 .scol-incl li { white-space: nowrap; }
 @media (max-width: 380px) { .scol-incl li { white-space: normal; } }
+.scol-badge { position: absolute; top: 24px; right: 24px; font-size: .75rem; font-weight: 600; line-height: 1; padding: 6px 9px; border-radius: 5px; color: var(--text); background: rgba(255,255,255,.08); }
+.scol-badge.best { color: #06101f; background: #fff; }
+
+/* 3D chrome logo above the hero headline */
+.hero-logo3d { width: 260px; height: 130px; margin: -24px auto 18px; opacity: 0; transition: opacity .8s ease; }
+.hero-logo3d.ready { opacity: 1; }
+.hero-logo3d canvas { display: block; width: 100%; height: 100%; }
+.hero-center { padding-top: 150px; }
+@media (max-width: 768px) { .hero-logo3d { width: 200px; height: 100px; margin: -16px auto 12px; } .hero-center { padding-top: 112px; } }

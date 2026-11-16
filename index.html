@@ -6,7 +6,7 @@
   <title>LinkedAI: AI Automation for Canadian Business Owners</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 <body>
 
@@ -54,6 +54,7 @@
   <section class="hero hero-center" id="hero">
     <div class="hero-grid">
       <div class="hero-content">
+        <div class="hero-logo3d" id="hero-logo3d" aria-hidden="true"></div>
         <h1 class="hero-h1">
           <span class="hero-l1">Start leveraging <span class="hero-ai">AI</span></span><br class="hero-br">
           <span class="hero-cycle-wrap"><span id="hero-cycle" class="hero-cycle">for your business.</span></span>
@@ -143,22 +144,20 @@
 
       <div class="steps-grid">
         <article class="scol">
-          <span class="scol-num">01</span>
+          <span class="scol-num">01</span><span class="scol-badge">Start here</span>
           <h3>Discovery call</h3>
           <p class="scol-meta">Free &middot; 25 minutes</p>
-          <p>A quick, no-pressure call about where your business is losing time. We&rsquo;ll tell you honestly which starting point makes sense.</p>
+          <p>A quick, no-pressure call about where your business is losing time.</p>
           <ul class="scol-list">
             <li>Where your team loses time</li>
-            <li>What you&rsquo;ve already tried</li>
-            <li><strong>Not sure where AI fits?</strong> Start with the AI Audit</li>
-            <li><strong>Know what to automate?</strong> Go straight to the AI Partnership</li>
+            <li>We&rsquo;ll find out which path suits you best</li>
           </ul>
         </article>
         <article class="scol">
-          <span class="scol-num">02</span>
+          <span class="scol-num">02</span><span class="scol-badge">Recommended</span>
           <h3>The AI Audit Starter Pack</h3>
           <p class="scol-meta">1-hour interview &middot; report in a week</p>
-          <p class="scol-q">Have no idea where AI could benefit your business?</p>
+          <p class="scol-q">No idea where AI could benefit your business?</p>
           <p>A structured interview with you and a few of your key employees about your bottlenecks and what&rsquo;s slowing you down. You walk away with a clear AI strategy: the tools to use and the automations that could save you the most time.</p>
           <ul class="scol-list">
             <li>Process map</li>
@@ -169,10 +168,10 @@
           <p class="scol-note"><strong>The plan is yours to keep.</strong> Act on it yourself, or build it with us and the audit is credited back in full within 60 days.</p>
         </article>
         <article class="scol">
-          <span class="scol-num">03</span>
+          <span class="scol-num">03</span><span class="scol-badge best">Best value</span>
           <h3>The AI Partnership</h3>
           <p class="scol-meta">Your AI team &middot; monthly</p>
-          <p>A full team of experienced AI developers, for less than one in-house hire. We set up your tools, build the custom ones and keep them running.</p>
+          <p>Outsource a full team of experienced AI developers, for less than one in-house hire. We set up your tools, build the custom ones and keep them running.</p>
           <ul class="scol-list">
             <li><strong>Kickoff:</strong> pick the first workflows, connect your tools</li>
             <li><strong>Build:</strong> set up your AI tools and custom automations</li>
@@ -286,9 +285,11 @@
     </div>
   </footer>
 
+  <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+  <script src="hero-logo.js?v=5" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-  <script src="smooth.js?v=1"></script>
-  <script src="brain.js?v=27" defer></script>
+  <script src="smooth.js?v=2"></script>
+  <script src="brain.js?v=29" defer></script>
   <script>
     const hamburger = document.getElementById('nav-hamburger');
     const mobileMenu = document.getElementById('nav-mobile-menu');
