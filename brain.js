@@ -45,11 +45,11 @@
 
   const LAYOUTS = {
     wide: {
-      W: 1200, H: 540, tw: 200, th: 64, R: 450, Ry: 105, P: 1500, S: 1.3, dsep: 6,
+      W: 1200, H: 540, tw: 210, th: 64, R: 450, Ry: 105, P: 1500, S: 1.3, dsep: 6,
       win: { x: 150, y: 26, w: 900, h: 488, bar: 52, side: 220, slotH: 40 }
     },
     narrow: {
-      W: 600, H: 760, tw: 196, th: 64, R: 215, Ry: 120, P: 700, S: 1.38, dsep: 7.2,
+      W: 600, H: 760, tw: 222, th: 64, R: 215, Ry: 120, P: 700, S: 1.38, dsep: 7.2,
       win: { x: 10, y: 16, w: 580, h: 728, bar: 64, side: 210, slotH: 50 }
     }
   };
