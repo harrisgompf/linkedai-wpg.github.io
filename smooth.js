@@ -1,7 +1,7 @@
 /* Slow, soft "drawer" scrolling (Lenis). Skipped for reduced-motion users. */
 (function () {
   if (!window.Lenis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const lenis = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true, syncTouch: true, syncTouchLerp: 0.06, touchInertiaMultiplier: 28 });
+  const lenis = new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true });
   window.lenis = lenis;
   function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
